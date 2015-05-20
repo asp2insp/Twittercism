@@ -107,24 +107,6 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dm8-HQ-FGI">
-                                            <rect key="frame" x="113" y="201" width="39" height="30"/>
-                                            <state key="normal" title="Reply">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJV-zd-UmA">
-                                            <rect key="frame" x="282" y="201" width="57" height="30"/>
-                                            <state key="normal" title="Retweet">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbj-yk-M4t">
-                                            <rect key="frame" x="469" y="201" width="30" height="30"/>
-                                            <state key="normal" title="Star">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SRP-5D-s7G">
                                             <rect key="frame" x="48" y="8" width="24" height="24"/>
                                             <constraints>
@@ -139,35 +121,50 @@
                                                 <constraint firstAttribute="height" constant="64" id="cdK-po-jhv"/>
                                             </constraints>
                                         </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d55-dX-Llg">
+                                            <rect key="frame" x="8" y="114" width="584" height="133"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="JwO-T7-9Ts" firstAttribute="leading" secondItem="I1Z-ma-9aR" secondAttribute="trailing" constant="8" id="0m8-U8-2IV"/>
-                                        <constraint firstItem="qJV-zd-UmA" firstAttribute="leading" secondItem="dm8-HQ-FGI" secondAttribute="trailing" constant="130" id="1kz-Ip-bq4"/>
-                                        <constraint firstAttribute="centerX" secondItem="qJV-zd-UmA" secondAttribute="centerX" constant="-10.5" id="7E0-Lk-lV8"/>
                                         <constraint firstItem="3lx-va-rcg" firstAttribute="top" secondItem="fcc-Kb-6NV" secondAttribute="top" id="7kt-VB-4mW"/>
                                         <constraint firstItem="fcc-Kb-6NV" firstAttribute="top" secondItem="SRP-5D-s7G" secondAttribute="bottom" constant="4" id="8Sv-Fv-0ma"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="0pT-TT-UE8" secondAttribute="trailing" constant="8" id="EAf-X0-CLz"/>
                                         <constraint firstItem="I1Z-ma-9aR" firstAttribute="leading" secondItem="fcc-Kb-6NV" secondAttribute="trailing" constant="8" id="EDi-Qz-3G5"/>
-                                        <constraint firstItem="dm8-HQ-FGI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0pT-TT-UE8" secondAttribute="bottom" constant="8" id="F2M-Rd-6yW"/>
                                         <constraint firstItem="fS9-kf-Sl1" firstAttribute="leading" secondItem="SRP-5D-s7G" secondAttribute="trailing" constant="8" id="IsK-NM-SWi"/>
-                                        <constraint firstItem="Vbj-yk-M4t" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0pT-TT-UE8" secondAttribute="bottom" constant="8" id="KVQ-Vh-rGM"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Vbj-yk-M4t" secondAttribute="bottom" constant="8" id="P2d-DM-3ds"/>
                                         <constraint firstItem="0pT-TT-UE8" firstAttribute="top" secondItem="I1Z-ma-9aR" secondAttribute="bottom" constant="8" id="T5k-O6-G3p"/>
                                         <constraint firstItem="fcc-Kb-6NV" firstAttribute="leading" secondItem="VWr-w8-MdZ" secondAttribute="leadingMargin" id="Ud8-Bc-CQy"/>
                                         <constraint firstItem="fcc-Kb-6NV" firstAttribute="top" secondItem="JwO-T7-9Ts" secondAttribute="top" id="VBh-Iq-K9n"/>
+                                        <constraint firstItem="d55-dX-Llg" firstAttribute="top" secondItem="0pT-TT-UE8" secondAttribute="bottom" constant="8" id="WtS-4e-Fp9"/>
                                         <constraint firstItem="SRP-5D-s7G" firstAttribute="top" secondItem="VWr-w8-MdZ" secondAttribute="topMargin" id="aK7-HY-eWl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="d55-dX-Llg" secondAttribute="trailing" id="bRh-Sb-zTQ"/>
                                         <constraint firstItem="3lx-va-rcg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JwO-T7-9Ts" secondAttribute="trailing" constant="8" id="bU7-fi-bPs"/>
                                         <constraint firstItem="fcc-Kb-6NV" firstAttribute="top" secondItem="I1Z-ma-9aR" secondAttribute="top" id="eAf-2w-Rki"/>
                                         <constraint firstItem="0pT-TT-UE8" firstAttribute="leading" secondItem="fcc-Kb-6NV" secondAttribute="trailing" constant="8" id="eJ5-FD-ZS1"/>
-                                        <constraint firstItem="qJV-zd-UmA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0pT-TT-UE8" secondAttribute="bottom" constant="8" id="eii-aE-1BE"/>
+                                        <constraint firstItem="d55-dX-Llg" firstAttribute="bottom" secondItem="VWr-w8-MdZ" secondAttribute="bottomMargin" id="hu0-me-gSa"/>
                                         <constraint firstItem="fS9-kf-Sl1" firstAttribute="top" secondItem="SRP-5D-s7G" secondAttribute="top" constant="2" id="hza-bV-9Y3"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="qJV-zd-UmA" secondAttribute="bottom" constant="8" id="qak-tM-6bp"/>
                                         <constraint firstItem="fcc-Kb-6NV" firstAttribute="trailing" secondItem="SRP-5D-s7G" secondAttribute="trailing" id="qzL-K1-CPq"/>
-                                        <constraint firstItem="Vbj-yk-M4t" firstAttribute="leading" secondItem="qJV-zd-UmA" secondAttribute="trailing" constant="130" id="uqA-nN-mS3"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="dm8-HQ-FGI" secondAttribute="bottom" constant="8" id="yNX-Lh-2DG"/>
+                                        <constraint firstItem="d55-dX-Llg" firstAttribute="bottom" secondItem="VWr-w8-MdZ" secondAttribute="bottomMargin" constant="8" id="wM3-k1-vEN"/>
+                                        <constraint firstItem="d55-dX-Llg" firstAttribute="leading" secondItem="VWr-w8-MdZ" secondAttribute="leadingMargin" id="yaF-HR-I3c"/>
                                         <constraint firstItem="3lx-va-rcg" firstAttribute="trailing" secondItem="VWr-w8-MdZ" secondAttribute="trailingMargin" id="zdN-f1-peV"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="hu0-me-gSa"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="actionContainer" destination="d55-dX-Llg" id="aoq-cz-3PE"/>
+                                    <outlet property="handleLabel" destination="JwO-T7-9Ts" id="O3G-uw-Zva"/>
+                                    <outlet property="localizedName" destination="I1Z-ma-9aR" id="bwF-pg-PhR"/>
+                                    <outlet property="profilePic" destination="fcc-Kb-6NV" id="CYd-jt-Vpg"/>
+                                    <outlet property="sourceIcon" destination="SRP-5D-s7G" id="6pa-dA-83J"/>
+                                    <outlet property="sourceText" destination="fS9-kf-Sl1" id="hyf-tg-cco"/>
+                                    <outlet property="timestamp" destination="3lx-va-rcg" id="Ilc-cR-CHA"/>
+                                    <outlet property="tweetContent" destination="0pT-TT-UE8" id="cSh-FX-ir4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
