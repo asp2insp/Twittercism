@@ -67,12 +67,12 @@
         <scene sceneID="YlI-cO-57h">
             <objects>
                 <tableViewController title="Stream" id="zg9-Ma-AsI" customClass="StreamViewController" customModule="Twittercism" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="248" sectionHeaderHeight="22" sectionFooterHeight="22" id="n5y-n8-STx">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="198" sectionHeaderHeight="22" sectionFooterHeight="22" id="n5y-n8-STx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="248" id="upx-9y-ar1" customClass="TweetCell" customModule="Twittercism" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="twittercism.tweetcell" id="upx-9y-ar1" customClass="TweetCell" customModule="Twittercism" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="upx-9y-ar1" id="VWr-w8-MdZ">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -101,13 +101,7 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum dolor sit amet alea jacta est disa som nune patris romanis sou" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pT-TT-UE8">
-                                            <rect key="frame" x="80" y="65" width="504" height="41"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SRP-5D-s7G">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="retweet.png" translatesAutoresizingMaskIntoConstraints="NO" id="SRP-5D-s7G">
                                             <rect key="frame" x="48" y="8" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="6Cg-HK-2mT"/>
@@ -116,20 +110,35 @@
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fcc-Kb-6NV">
                                             <rect key="frame" x="8" y="36" width="64" height="64"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="64" id="3Ba-RG-N4A"/>
                                                 <constraint firstAttribute="height" constant="64" id="cdK-po-jhv"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d55-dX-Llg">
-                                            <rect key="frame" x="8" y="114" width="584" height="133"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <rect key="frame" x="-8" y="167" width="616" height="30"/>
+                                            <color key="backgroundColor" red="0.80392156859999997" green="0.0" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="5Y2-ab-eNB"/>
+                                            </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" text="Lorem Ipsum dolor sit amet alea jacta est disa som nune patris romanis sou" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pT-TT-UE8">
+                                            <rect key="frame" x="80" y="44" width="443" height="115"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="300" id="gCq-o2-LGQ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="JwO-T7-9Ts" firstAttribute="leading" secondItem="I1Z-ma-9aR" secondAttribute="trailing" constant="8" id="0m8-U8-2IV"/>
+                                        <constraint firstItem="d55-dX-Llg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0pT-TT-UE8" secondAttribute="bottom" constant="8" id="2cz-GQ-D42"/>
                                         <constraint firstItem="3lx-va-rcg" firstAttribute="top" secondItem="fcc-Kb-6NV" secondAttribute="top" id="7kt-VB-4mW"/>
                                         <constraint firstItem="fcc-Kb-6NV" firstAttribute="top" secondItem="SRP-5D-s7G" secondAttribute="bottom" constant="4" id="8Sv-Fv-0ma"/>
+                                        <constraint firstItem="fcc-Kb-6NV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VWr-w8-MdZ" secondAttribute="topMargin" constant="8" id="D5F-nb-96J"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="0pT-TT-UE8" secondAttribute="trailing" constant="8" id="EAf-X0-CLz"/>
                                         <constraint firstItem="I1Z-ma-9aR" firstAttribute="leading" secondItem="fcc-Kb-6NV" secondAttribute="trailing" constant="8" id="EDi-Qz-3G5"/>
                                         <constraint firstItem="fS9-kf-Sl1" firstAttribute="leading" secondItem="SRP-5D-s7G" secondAttribute="trailing" constant="8" id="IsK-NM-SWi"/>
@@ -138,19 +147,22 @@
                                         <constraint firstItem="fcc-Kb-6NV" firstAttribute="top" secondItem="JwO-T7-9Ts" secondAttribute="top" id="VBh-Iq-K9n"/>
                                         <constraint firstItem="d55-dX-Llg" firstAttribute="top" secondItem="0pT-TT-UE8" secondAttribute="bottom" constant="8" id="WtS-4e-Fp9"/>
                                         <constraint firstItem="SRP-5D-s7G" firstAttribute="top" secondItem="VWr-w8-MdZ" secondAttribute="topMargin" id="aK7-HY-eWl"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="d55-dX-Llg" secondAttribute="trailing" id="bRh-Sb-zTQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="d55-dX-Llg" secondAttribute="trailing" constant="-16" id="bRh-Sb-zTQ"/>
                                         <constraint firstItem="3lx-va-rcg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JwO-T7-9Ts" secondAttribute="trailing" constant="8" id="bU7-fi-bPs"/>
                                         <constraint firstItem="fcc-Kb-6NV" firstAttribute="top" secondItem="I1Z-ma-9aR" secondAttribute="top" id="eAf-2w-Rki"/>
                                         <constraint firstItem="0pT-TT-UE8" firstAttribute="leading" secondItem="fcc-Kb-6NV" secondAttribute="trailing" constant="8" id="eJ5-FD-ZS1"/>
                                         <constraint firstItem="d55-dX-Llg" firstAttribute="bottom" secondItem="VWr-w8-MdZ" secondAttribute="bottomMargin" id="hu0-me-gSa"/>
                                         <constraint firstItem="fS9-kf-Sl1" firstAttribute="top" secondItem="SRP-5D-s7G" secondAttribute="top" constant="2" id="hza-bV-9Y3"/>
                                         <constraint firstItem="fcc-Kb-6NV" firstAttribute="trailing" secondItem="SRP-5D-s7G" secondAttribute="trailing" id="qzL-K1-CPq"/>
+                                        <constraint firstItem="d55-dX-Llg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fcc-Kb-6NV" secondAttribute="bottom" constant="8" id="vD1-YG-nbz"/>
                                         <constraint firstItem="d55-dX-Llg" firstAttribute="bottom" secondItem="VWr-w8-MdZ" secondAttribute="bottomMargin" constant="8" id="wM3-k1-vEN"/>
-                                        <constraint firstItem="d55-dX-Llg" firstAttribute="leading" secondItem="VWr-w8-MdZ" secondAttribute="leadingMargin" id="yaF-HR-I3c"/>
+                                        <constraint firstItem="d55-dX-Llg" firstAttribute="leading" secondItem="VWr-w8-MdZ" secondAttribute="leadingMargin" constant="-16" id="yaF-HR-I3c"/>
                                         <constraint firstItem="3lx-va-rcg" firstAttribute="trailing" secondItem="VWr-w8-MdZ" secondAttribute="trailingMargin" id="zdN-f1-peV"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="EAf-X0-CLz"/>
+                                            <exclude reference="WtS-4e-Fp9"/>
                                             <exclude reference="hu0-me-gSa"/>
                                         </mask>
                                     </variation>
@@ -173,6 +185,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ZzD-bg-7LE"/>
+                    <connections>
+                        <segue destination="rn1-Ox-dMx" kind="show" identifier="showTimelineOfUser" id="mwi-SC-pdL"/>
+                        <segue destination="5PP-7S-qDJ" kind="show" identifier="showTweetDetail" id="F9k-LN-wqF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="clv-O9-gXJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,10 +224,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="C4y-wy-VIw">
-                                <rect key="frame" x="0.0" y="-199" width="600" height="799"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GuK-N8-TGq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                             </imageView>
@@ -222,12 +234,16 @@
                                     <constraint firstAttribute="height" constant="128" id="zeV-hK-K3j"/>
                                 </constraints>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="C4y-wy-VIw">
+                                <rect key="frame" x="0.0" y="-199" width="600" height="799"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nbR-ZV-1cE" firstAttribute="leading" secondItem="7lm-RM-JVG" secondAttribute="leadingMargin" id="4Lo-Ee-e06"/>
                             <constraint firstItem="C4y-wy-VIw" firstAttribute="leading" secondItem="7lm-RM-JVG" secondAttribute="leadingMargin" constant="-16" id="6ie-xW-gH2"/>
-                            <constraint firstAttribute="height" secondItem="C4y-wy-VIw" secondAttribute="height" multiplier="3:4" constant="1" id="Cb5-zS-keR"/>
+                            <constraint firstAttribute="height" secondItem="C4y-wy-VIw" secondAttribute="height" multiplier="3:4" priority="750" constant="1" id="Cb5-zS-keR"/>
                             <constraint firstItem="GuK-N8-TGq" firstAttribute="bottom" secondItem="nbR-ZV-1cE" secondAttribute="bottom" constant="-64" id="NLx-wE-GPw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GuK-N8-TGq" secondAttribute="trailing" constant="-16" id="PLv-t8-2zy"/>
                             <constraint firstItem="GuK-N8-TGq" firstAttribute="leading" secondItem="7lm-RM-JVG" secondAttribute="leadingMargin" constant="-16" id="YXh-YJ-uY8"/>
@@ -248,7 +264,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T45-cK-VVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2495" y="245"/>
+            <point key="canvasLocation" x="2483" y="277"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="retweet.png" width="32" height="32"/>
+    </resources>
 </document>

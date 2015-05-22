@@ -36,6 +36,7 @@
 		FEA707241B0C1D5E00A401D4 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA707211B0C1D5E00A401D4 /* star.png */; };
 		FEA707251B0C1D5E00A401D4 /* retweet.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA707221B0C1D5E00A401D4 /* retweet.png */; };
 		FEA707281B0C20A700A401D4 /* ActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA707271B0C20A700A401D4 /* ActionBarView.swift */; };
+		FEA7072A1B0D6FE900A401D4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA707291B0D6FE900A401D4 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		FEA707211B0C1D5E00A401D4 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		FEA707221B0C1D5E00A401D4 /* retweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retweet.png; sourceTree = "<group>"; };
 		FEA707271B0C20A700A401D4 /* ActionBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionBarView.swift; sourceTree = "<group>"; };
+		FEA707291B0D6FE900A401D4 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				FEA706CE1B0AD1FE00A401D4 /* Images.xcassets */,
 				FEA706D01B0AD1FE00A401D4 /* LaunchScreen.xib */,
 				FEA706C51B0AD1FE00A401D4 /* Supporting Files */,
+				FEA707291B0D6FE900A401D4 /* Utils.swift */,
 			);
 			path = Twittercism;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				FEA707021B0AD72100A401D4 /* TimelineViewController.swift in Sources */,
 				FEA707071B0AD78D00A401D4 /* WriteTweetViewController.swift in Sources */,
 				FEA707041B0AD72900A401D4 /* TimelineStore.swift in Sources */,
+				FEA7072A1B0D6FE900A401D4 /* Utils.swift in Sources */,
 				FEA7071B1B0B9DE400A401D4 /* Reactor.swift in Sources */,
 				FEA7070E1B0AD83000A401D4 /* TwitterApi.swift in Sources */,
 				FEA706FD1B0AD6C400A401D4 /* ProfileStore.swift in Sources */,

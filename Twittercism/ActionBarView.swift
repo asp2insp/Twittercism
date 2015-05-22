@@ -15,17 +15,24 @@ class ActionBarView : UIView {
     @IBOutlet weak var retweetButton: UIButton!
     @IBOutlet weak var replyButton: UIButton!
     
+    var delegate : TweetActionDelegate? = nil
     
     @IBAction func doAction(sender: UIButton) {
         switch sender {
         case starButton:
-            NSLog("Star Button!")
+            self.delegate?.onFavorite()
         case retweetButton:
-            NSLog("Retweet Button!")
+            self.delegate?.onRetweet()
         case replyButton:
-            NSLog("Reply Button!")
+            self.delegate?.onReply()
         default:
             NSLog("Unknown Sender")
         }
     }
+}
+
+public protocol TweetActionDelegate {
+    func onFavorite()
+    func onRetweet()
+    func onReply()
 }
