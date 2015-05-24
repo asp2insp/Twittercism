@@ -15,6 +15,10 @@
 		FE7781991B11A125006EA4D0 /* feather@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7781971B11A125006EA4D0 /* feather@2x.png */; };
 		FE77819A1B11A125006EA4D0 /* feather.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7781981B11A125006EA4D0 /* feather.png */; };
 		FE77819C1B11A2D7006EA4D0 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77819B1B11A2D7006EA4D0 /* TweetDetailViewController.swift */; };
+		FE7781A21B12387C006EA4D0 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE77819E1B12387C006EA4D0 /* Fabric.framework */; };
+		FE7781A31B12387C006EA4D0 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE77819F1B12387C006EA4D0 /* TwitterKit.framework */; };
+		FE7781A41B12387C006EA4D0 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE7781A01B12387C006EA4D0 /* TwitterKitResources.bundle */; };
+		FE7781A51B12387C006EA4D0 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7781A11B12387C006EA4D0 /* TwitterCore.framework */; };
 		FEA706C81B0AD1FE00A401D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA706C71B0AD1FE00A401D4 /* AppDelegate.swift */; };
 		FEA706CA1B0AD1FE00A401D4 /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA706C91B0AD1FE00A401D4 /* StreamViewController.swift */; };
 		FEA706CD1B0AD1FE00A401D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA706CB1B0AD1FE00A401D4 /* Main.storyboard */; };
@@ -66,6 +70,10 @@
 		FE7781971B11A125006EA4D0 /* feather@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feather@2x.png"; sourceTree = "<group>"; };
 		FE7781981B11A125006EA4D0 /* feather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feather.png; sourceTree = "<group>"; };
 		FE77819B1B11A2D7006EA4D0 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
+		FE77819E1B12387C006EA4D0 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		FE77819F1B12387C006EA4D0 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		FE7781A01B12387C006EA4D0 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		FE7781A11B12387C006EA4D0 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		FEA706C21B0AD1FE00A401D4 /* Twittercism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twittercism.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA706C61B0AD1FE00A401D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEA706C71B0AD1FE00A401D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +114,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5555F9E6E6871EE0D670B9D2 /* libPods.a in Frameworks */,
+				FE7781A51B12387C006EA4D0 /* TwitterCore.framework in Frameworks */,
+				FE7781A21B12387C006EA4D0 /* Fabric.framework in Frameworks */,
+				FE7781A31B12387C006EA4D0 /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +142,10 @@
 		DAD5B1344D8283D9B8C075B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE77819E1B12387C006EA4D0 /* Fabric.framework */,
+				FE77819F1B12387C006EA4D0 /* TwitterKit.framework */,
+				FE7781A01B12387C006EA4D0 /* TwitterKitResources.bundle */,
+				FE7781A11B12387C006EA4D0 /* TwitterCore.framework */,
 				1F4BC6148E3590B3E02866C4 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -283,6 +298,7 @@
 				FEA706BF1B0AD1FE00A401D4 /* Frameworks */,
 				FEA706C01B0AD1FE00A401D4 /* Resources */,
 				9A430ABFA963C5E287C70A66 /* Copy Pods Resources */,
+				FE77819D1B1237ED006EA4D0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -362,6 +378,7 @@
 				FEA7071F1B0C177400A401D4 /* Tweet.xib in Resources */,
 				FEA706D21B0AD1FE00A401D4 /* LaunchScreen.xib in Resources */,
 				FE7781991B11A125006EA4D0 /* feather@2x.png in Resources */,
+				FE7781A41B12387C006EA4D0 /* TwitterKitResources.bundle in Resources */,
 				FE7781951B119EE9006EA4D0 /* home@2x.png in Resources */,
 				FEA707251B0C1D5E00A401D4 /* retweet.png in Resources */,
 				FEA706CF1B0AD1FE00A401D4 /* Images.xcassets in Resources */,
@@ -409,6 +426,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		FE77819D1B1237ED006EA4D0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run b4116915ef52d1e482f5c1b33327e2016d92325f 70ad2c5b4140ec38bcde3fb26b6f49ba0422a8f7be453c02feac05c30efeefce";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -567,6 +597,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Twittercism/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -581,6 +615,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Twittercism/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

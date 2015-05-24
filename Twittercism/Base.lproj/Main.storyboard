@@ -8,7 +8,7 @@
         <!--Profile-->
         <scene sceneID="Cb5-9n-gUW">
             <objects>
-                <viewController title="Profile" id="PvJ-W8-uMv" sceneMemberID="viewController">
+                <viewController title="Profile" id="PvJ-W8-uMv" customClass="ProfileViewController" customModule="Twittercism" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PHY-d0-Zx5"/>
                         <viewControllerLayoutGuide type="bottom" id="TQP-dI-rgu"/>
@@ -16,7 +16,37 @@
                     <view key="view" contentMode="scaleToFill" id="PNg-uH-xzf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2Z-ff-qGi">
+                                <rect key="frame" x="0.0" y="500" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdt-4A-nir">
+                                        <rect key="frame" x="200" y="10" width="200" height="30"/>
+                                        <color key="backgroundColor" red="0.80392156859999997" green="0.0" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="bFH-Y8-wV8"/>
+                                        </constraints>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doLogout:" destination="PvJ-W8-uMv" eventType="touchUpInside" id="Vo3-o2-Sf7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="Bdt-4A-nir" secondAttribute="centerX" id="FrP-qc-4tj"/>
+                                    <constraint firstAttribute="centerY" secondItem="Bdt-4A-nir" secondAttribute="centerY" id="N1B-Al-rDa"/>
+                                    <constraint firstAttribute="height" constant="50" id="jeY-bV-Cwm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f2Z-ff-qGi" firstAttribute="leading" secondItem="PNg-uH-xzf" secondAttribute="leadingMargin" constant="-16" id="KjH-cx-gsf"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="f2Z-ff-qGi" secondAttribute="bottom" constant="50" id="QVW-sA-eOf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f2Z-ff-qGi" secondAttribute="trailing" constant="-16" id="gjZ-Jj-2cd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AN4-fz-00p">
                         <barButtonItem key="rightBarButtonItem" image="feather.png" id="ELc-Ux-PfC">
@@ -25,6 +55,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="loginButtonPlaceholder" destination="f2Z-ff-qGi" id="4Vp-Uw-mf6"/>
+                        <outlet property="logoutButton" destination="Bdt-4A-nir" id="0qM-KM-r9F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spe-IU-kvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -198,6 +232,6 @@
         <image name="user.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cJ3-A3-h0S"/>
+        <segue reference="sn0-N8-w0I"/>
     </inferredMetricsTieBreakers>
 </document>
