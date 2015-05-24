@@ -6,10 +6,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="Cb5-9n-gUW">
             <objects>
-                <viewController id="PvJ-W8-uMv" sceneMemberID="viewController">
+                <viewController title="Profile" id="PvJ-W8-uMv" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PHY-d0-Zx5"/>
                         <viewControllerLayoutGuide type="bottom" id="TQP-dI-rgu"/>
@@ -19,11 +19,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="zqh-qk-Ane"/>
+                    <navigationItem key="navigationItem" id="AN4-fz-00p">
+                        <barButtonItem key="rightBarButtonItem" image="feather.png" id="ELc-Ux-PfC">
+                            <connections>
+                                <segue destination="lVi-ny-dbQ" kind="presentation" id="sn0-N8-w0I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spe-IU-kvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1067" y="833"/>
+            <point key="canvasLocation" x="1767" y="833"/>
+        </scene>
+        <!--Write Tweet View Controller-->
+        <scene sceneID="BlL-IM-rtt">
+            <objects>
+                <viewController id="58K-GY-C6B" customClass="WriteTweetViewController" customModule="Twittercism" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="31D-PN-raZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="AiC-nF-ULN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x2u-Fi-M1u">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Ihx-Ek-a0i"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qSk-Dv-gTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2853" y="1584"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dkE-0J-ABh">
@@ -37,18 +64,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="JC3-f6-gdt" kind="relationship" relationship="viewControllers" id="49Z-6Z-Raq"/>
-                        <segue destination="PvJ-W8-uMv" kind="relationship" relationship="viewControllers" id="URf-Ay-pFq"/>
+                        <segue destination="yXe-iY-zxC" kind="relationship" relationship="viewControllers" id="URf-Ay-pFq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xhe-0E-EO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="243" y="339"/>
         </scene>
-        <!--Item-->
+        <!--Timelines-->
         <scene sceneID="IRJ-NE-6L2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JC3-f6-gdt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="4Xn-Cq-OIt"/>
+                    <tabBarItem key="tabBarItem" title="Timelines" image="home.png" id="4Xn-Cq-OIt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wh8-kY-7fL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -63,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="1067" y="-81"/>
         </scene>
-        <!--Stream View Controller-->
+        <!--Timeline-->
         <scene sceneID="jHV-VD-ksX">
             <objects>
-                <viewController id="fmk-Qp-cLm" customClass="StreamViewController" customModule="Twittercism" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Timeline" id="fmk-Qp-cLm" customClass="StreamViewController" customModule="Twittercism" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QTZ-c7-WAU"/>
                         <viewControllerLayoutGuide type="bottom" id="uJQ-6u-pLt"/>
@@ -75,7 +102,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="219" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0nx-ql-ul7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="219" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0nx-ql-ul7">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -91,19 +118,29 @@
                             <constraint firstAttribute="trailingMargin" secondItem="0nx-ql-ul7" secondAttribute="trailing" constant="-16" id="k7Y-QV-iUR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Gi1-bk-lty"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Gi1-bk-lty">
+                        <barButtonItem key="rightBarButtonItem" image="feather.png" id="LDG-j6-guC">
+                            <connections>
+                                <segue destination="lVi-ny-dbQ" kind="presentation" id="cJ3-A3-h0S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="0nx-ql-ul7" id="HuG-ws-ZJ5"/>
+                        <segue destination="rn1-Ox-dMx" kind="show" identifier="UserTimeline" id="cnt-n2-3Rd"/>
+                        <segue destination="5PP-7S-qDJ" kind="show" identifier="TweetDetail" id="sde-Uu-PqN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZL-bs-PUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="-81"/>
+            <point key="canvasLocation" x="1767" y="-81"/>
         </scene>
         <!--Tweet Detail-->
         <scene sceneID="3ET-E3-D6g">
             <objects>
-                <viewController title="Tweet Detail" id="5PP-7S-qDJ" sceneMemberID="viewController">
+                <viewController title="Tweet Detail" id="5PP-7S-qDJ" customClass="TweetDetailViewController" customModule="Twittercism" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gd8-Ma-Fam"/>
                         <viewControllerLayoutGuide type="bottom" id="1cg-HA-M04"/>
@@ -118,10 +155,10 @@
             </objects>
             <point key="canvasLocation" x="2495" y="-451"/>
         </scene>
-        <!--View Controller-->
+        <!--Timeline View Controller-->
         <scene sceneID="NF0-SG-UVw">
             <objects>
-                <viewController id="rn1-Ox-dMx" sceneMemberID="viewController">
+                <viewController id="rn1-Ox-dMx" customClass="TimelineViewController" customModule="Twittercism" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="grE-Dh-mOq"/>
                         <viewControllerLayoutGuide type="bottom" id="Ids-hK-kv3"/>
@@ -170,7 +207,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T45-cK-VVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2483" y="277"/>
+            <point key="canvasLocation" x="2495" y="227"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="Hse-yZ-TDn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yXe-iY-zxC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Me" image="user.png" id="zqh-qk-Ane"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ybD-MD-Fa8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PvJ-W8-uMv" kind="relationship" relationship="rootViewController" id="dYv-kZ-hMV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8A9-zh-5v2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1067" y="833"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="id4-8r-ju7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lVi-ny-dbQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kaT-dV-0yN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="58K-GY-C6B" kind="relationship" relationship="rootViewController" id="Qbu-3f-tDz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lcv-Ea-cJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2197" y="1584"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="feather.png" width="32" height="32"/>
+        <image name="home.png" width="32" height="32"/>
+        <image name="user.png" width="32" height="32"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sn0-N8-w0I"/>
+    </inferredMetricsTieBreakers>
 </document>

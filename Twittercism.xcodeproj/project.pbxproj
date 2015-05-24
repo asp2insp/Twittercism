@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5555F9E6E6871EE0D670B9D2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4BC6148E3590B3E02866C4 /* libPods.a */; };
+		FE7781931B119EE9006EA4D0 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE77818F1B119EE9006EA4D0 /* user@2x.png */; };
+		FE7781941B119EE9006EA4D0 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7781901B119EE9006EA4D0 /* user.png */; };
+		FE7781951B119EE9006EA4D0 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7781911B119EE9006EA4D0 /* home@2x.png */; };
+		FE7781961B119EE9006EA4D0 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7781921B119EE9006EA4D0 /* home.png */; };
+		FE7781991B11A125006EA4D0 /* feather@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7781971B11A125006EA4D0 /* feather@2x.png */; };
+		FE77819A1B11A125006EA4D0 /* feather.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7781981B11A125006EA4D0 /* feather.png */; };
+		FE77819C1B11A2D7006EA4D0 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77819B1B11A2D7006EA4D0 /* TweetDetailViewController.swift */; };
 		FEA706C81B0AD1FE00A401D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA706C71B0AD1FE00A401D4 /* AppDelegate.swift */; };
 		FEA706CA1B0AD1FE00A401D4 /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA706C91B0AD1FE00A401D4 /* StreamViewController.swift */; };
 		FEA706CD1B0AD1FE00A401D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA706CB1B0AD1FE00A401D4 /* Main.storyboard */; };
@@ -52,6 +59,13 @@
 		1F4BC6148E3590B3E02866C4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E321D1E770453E919162E9F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D83AEA2F4B44C15ACDD6EC2E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FE77818F1B119EE9006EA4D0 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
+		FE7781901B119EE9006EA4D0 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		FE7781911B119EE9006EA4D0 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
+		FE7781921B119EE9006EA4D0 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		FE7781971B11A125006EA4D0 /* feather@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feather@2x.png"; sourceTree = "<group>"; };
+		FE7781981B11A125006EA4D0 /* feather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feather.png; sourceTree = "<group>"; };
+		FE77819B1B11A2D7006EA4D0 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		FEA706C21B0AD1FE00A401D4 /* Twittercism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twittercism.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA706C61B0AD1FE00A401D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEA706C71B0AD1FE00A401D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +180,12 @@
 		FEA706C51B0AD1FE00A401D4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE7781971B11A125006EA4D0 /* feather@2x.png */,
+				FE7781981B11A125006EA4D0 /* feather.png */,
+				FE77818F1B119EE9006EA4D0 /* user@2x.png */,
+				FE7781901B119EE9006EA4D0 /* user.png */,
+				FE7781911B119EE9006EA4D0 /* home@2x.png */,
+				FE7781921B119EE9006EA4D0 /* home.png */,
 				FEA707201B0C1D5E00A401D4 /* reply.png */,
 				FEA707211B0C1D5E00A401D4 /* star.png */,
 				FEA707221B0C1D5E00A401D4 /* retweet.png */,
@@ -246,6 +266,7 @@
 			children = (
 				FEA706FE1B0AD6CE00A401D4 /* TweetView.swift */,
 				FEA7071E1B0C177400A401D4 /* Tweet.xib */,
+				FE77819B1B11A2D7006EA4D0 /* TweetDetailViewController.swift */,
 			);
 			name = Tweet;
 			sourceTree = "<group>";
@@ -334,12 +355,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEA706CD1B0AD1FE00A401D4 /* Main.storyboard in Resources */,
+				FE77819A1B11A125006EA4D0 /* feather.png in Resources */,
 				FEA707231B0C1D5E00A401D4 /* reply.png in Resources */,
+				FE7781961B119EE9006EA4D0 /* home.png in Resources */,
+				FE7781941B119EE9006EA4D0 /* user.png in Resources */,
 				FEA7071F1B0C177400A401D4 /* Tweet.xib in Resources */,
 				FEA706D21B0AD1FE00A401D4 /* LaunchScreen.xib in Resources */,
+				FE7781991B11A125006EA4D0 /* feather@2x.png in Resources */,
+				FE7781951B119EE9006EA4D0 /* home@2x.png in Resources */,
 				FEA707251B0C1D5E00A401D4 /* retweet.png in Resources */,
 				FEA706CF1B0AD1FE00A401D4 /* Images.xcassets in Resources */,
 				FEA707241B0C1D5E00A401D4 /* star.png in Resources */,
+				FE7781931B119EE9006EA4D0 /* user@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +422,7 @@
 				FEA706FB1B0AD6BC00A401D4 /* StreamStore.swift in Sources */,
 				FEA7071C1B0B9DE400A401D4 /* Store.swift in Sources */,
 				FEA707091B0AD7D600A401D4 /* WriteTweetStore.swift in Sources */,
+				FE77819C1B11A2D7006EA4D0 /* TweetDetailViewController.swift in Sources */,
 				FEA707191B0B9DE400A401D4 /* Getter.swift in Sources */,
 				FEA7070C1B0AD82200A401D4 /* AccountManager.swift in Sources */,
 				FEA707171B0B9DE400A401D4 /* ChangeObserver.swift in Sources */,

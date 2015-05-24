@@ -17,7 +17,7 @@
                         <constraint firstAttribute="height" constant="24" id="MT4-W1-lPN"/>
                         <constraint firstAttribute="width" constant="24" id="sjH-YQ-l58"/>
                     </constraints>
-                    <state key="normal" image="retweet.png">
+                    <state key="normal" title="Retweet" image="retweet.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -30,7 +30,7 @@
                         <constraint firstAttribute="height" constant="24" id="pp1-V2-IQ0"/>
                         <constraint firstAttribute="width" constant="24" id="wkR-qI-pOJ"/>
                     </constraints>
-                    <state key="normal" image="star.png">
+                    <state key="normal" title="Favorite" image="star.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -43,7 +43,7 @@
                         <constraint firstAttribute="width" constant="24" id="dWu-gh-gze"/>
                         <constraint firstAttribute="height" constant="24" id="vgN-xA-Yu6"/>
                     </constraints>
-                    <state key="normal" image="reply.png">
+                    <state key="normal" title="Reply" image="reply.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -122,7 +122,6 @@
                 <constraint firstAttribute="bottom" secondItem="wss-1f-OeU" secondAttribute="bottom" constant="8" id="Yg8-Zv-QPv"/>
                 <constraint firstAttribute="bottom" secondItem="QPB-j1-LPL" secondAttribute="bottom" constant="8" id="atl-ET-myU"/>
                 <constraint firstItem="LIj-j8-t7g" firstAttribute="trailing" secondItem="obb-gh-2cA" secondAttribute="trailing" id="eYu-9c-JNC"/>
-                <constraint firstItem="LIj-j8-t7g" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="750" constant="8" id="fC5-aa-deI"/>
                 <constraint firstAttribute="trailing" secondItem="G5H-qE-pnR" secondAttribute="trailing" constant="4" id="gjg-4u-tH8"/>
                 <constraint firstItem="jc0-7A-o2y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="hY4-hR-Smt"/>
                 <constraint firstAttribute="centerX" secondItem="21q-9E-hy6" secondAttribute="centerX" id="pNd-uP-WXc"/>
