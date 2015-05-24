@@ -8,33 +8,46 @@
 
 import UIKit
 
-class StreamViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var tableView: UITableView!
-    var reactor : Reactor! = Reactor()
+class StreamViewController : UITableViewController {
+    var reactor : Reactor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 160;
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.registerNib(UINib(nibName: "Tweet", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "tweet")
+        TwitterApi.loadTweets()
+        
+        
+        self.refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: "fetchTimeline", forControlEvents: UIControlEvents.ValueChanged)
+        
+        reactor = TwitterApi.sharedInstance.reactor
+        reactor.observe(Getter(keyPath: []), handler: { (newState) -> () in
+            self.refreshControl?.endRefreshing()
+        })
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func fetchTimeline() {
+        TwitterApi.loadTweets()
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         // TODO: Infinite scroll
     }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // TODO: Bind to reactor
         return 3
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tweet", forIndexPath: indexPath) as! TweetView
         cell.tweet = reactor.evaluate(Getter(keyPath: ["data", "tweets", indexPath.row]))
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("TweetDetail", sender: self)
     }
 }

@@ -29,8 +29,6 @@
 		FEA706FB1B0AD6BC00A401D4 /* StreamStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA706FA1B0AD6BC00A401D4 /* StreamStore.swift */; };
 		FEA706FD1B0AD6C400A401D4 /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA706FC1B0AD6C400A401D4 /* ProfileStore.swift */; };
 		FEA706FF1B0AD6CE00A401D4 /* TweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA706FE1B0AD6CE00A401D4 /* TweetView.swift */; };
-		FEA707021B0AD72100A401D4 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA707011B0AD72100A401D4 /* TimelineViewController.swift */; };
-		FEA707041B0AD72900A401D4 /* TimelineStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA707031B0AD72900A401D4 /* TimelineStore.swift */; };
 		FEA707071B0AD78D00A401D4 /* WriteTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA707061B0AD78D00A401D4 /* WriteTweetViewController.swift */; };
 		FEA707091B0AD7D600A401D4 /* WriteTweetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA707081B0AD7D600A401D4 /* WriteTweetStore.swift */; };
 		FEA7070C1B0AD82200A401D4 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7070B1B0AD82200A401D4 /* AccountManager.swift */; };
@@ -88,8 +86,6 @@
 		FEA706FA1B0AD6BC00A401D4 /* StreamStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamStore.swift; sourceTree = "<group>"; };
 		FEA706FC1B0AD6C400A401D4 /* ProfileStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileStore.swift; sourceTree = "<group>"; };
 		FEA706FE1B0AD6CE00A401D4 /* TweetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetView.swift; sourceTree = "<group>"; };
-		FEA707011B0AD72100A401D4 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
-		FEA707031B0AD72900A401D4 /* TimelineStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineStore.swift; sourceTree = "<group>"; };
 		FEA707061B0AD78D00A401D4 /* WriteTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteTweetViewController.swift; sourceTree = "<group>"; };
 		FEA707081B0AD7D600A401D4 /* WriteTweetStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteTweetStore.swift; sourceTree = "<group>"; };
 		FEA7070B1B0AD82200A401D4 /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
@@ -181,7 +177,6 @@
 				FEA7070D1B0AD83000A401D4 /* TwitterApi.swift */,
 				FEA706F71B0AD68B00A401D4 /* Stream */,
 				FEA706F61B0AD68000A401D4 /* Profile */,
-				FEA707001B0AD70600A401D4 /* Timeline */,
 				FEA707051B0AD75B00A401D4 /* WriteTweet */,
 				FEA706CB1B0AD1FE00A401D4 /* Main.storyboard */,
 				FEA706CE1B0AD1FE00A401D4 /* Images.xcassets */,
@@ -256,15 +251,6 @@
 				FEA706FA1B0AD6BC00A401D4 /* StreamStore.swift */,
 			);
 			name = Stream;
-			sourceTree = "<group>";
-		};
-		FEA707001B0AD70600A401D4 /* Timeline */ = {
-			isa = PBXGroup;
-			children = (
-				FEA707011B0AD72100A401D4 /* TimelineViewController.swift */,
-				FEA707031B0AD72900A401D4 /* TimelineStore.swift */,
-			);
-			name = Timeline;
 			sourceTree = "<group>";
 		};
 		FEA707051B0AD75B00A401D4 /* WriteTweet */ = {
@@ -461,9 +447,7 @@
 				FEA706FF1B0AD6CE00A401D4 /* TweetView.swift in Sources */,
 				FEA7071D1B0B9DE400A401D4 /* Tag.swift in Sources */,
 				FEA7071A1B0B9DE400A401D4 /* Immutable.swift in Sources */,
-				FEA707021B0AD72100A401D4 /* TimelineViewController.swift in Sources */,
 				FEA707071B0AD78D00A401D4 /* WriteTweetViewController.swift in Sources */,
-				FEA707041B0AD72900A401D4 /* TimelineStore.swift in Sources */,
 				FEA7072A1B0D6FE900A401D4 /* Utils.swift in Sources */,
 				FEA7071B1B0B9DE400A401D4 /* Reactor.swift in Sources */,
 				FEA7070E1B0AD83000A401D4 /* TwitterApi.swift in Sources */,
