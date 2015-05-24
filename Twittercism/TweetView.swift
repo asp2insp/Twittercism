@@ -20,6 +20,7 @@ class TweetView : UITableViewCell {
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var retweetButton: UIButton!
     @IBOutlet weak var replyButton: UIButton!
+    @IBOutlet weak var retweetHeightConstraint: NSLayoutConstraint!
     
     var tweet : Immutable.State = Immutable.State.None {
         didSet {
@@ -30,13 +31,13 @@ class TweetView : UITableViewCell {
             localizedName.text = authorName
             
             if let isRetweet = tweet.getIn(["retweet"]).toSwift() as? Bool where isRetweet {
-                sourceIcon.setHeight(24)
-                sourceText.setHeight(24)
+                retweetHeightConstraint.constant = 24
+                sourceText.hidden = false
                 let retweetAuthor = tweet.getIn(["retweet_from"]).toSwift() as? String ?? "Unknown"
                 sourceText.text = "\(retweetAuthor) retweeted"
             } else {
-                sourceIcon.setHeight(0)
-                sourceText.setHeight(0)
+                retweetHeightConstraint.constant = 0
+                sourceText.hidden = true
             }
             
             // TODO: Profile pic and timestamp

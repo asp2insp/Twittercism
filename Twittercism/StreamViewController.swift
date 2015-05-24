@@ -10,7 +10,7 @@ import UIKit
 
 class StreamViewController : UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-    
+    var reactor : Reactor! = Reactor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,7 @@ class StreamViewController : UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tweet", forIndexPath: indexPath) as! TweetView
+        cell.tweet = reactor.evaluate(Getter(keyPath: ["data", "tweets", indexPath.row]))
         return cell
     }
 }
