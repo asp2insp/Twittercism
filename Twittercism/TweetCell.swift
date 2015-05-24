@@ -17,14 +17,10 @@ class TweetCell : UITableViewCell, TweetActionDelegate {
     @IBOutlet weak var handleLabel: UILabel!
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var tweetContent: UILabel!
-    @IBOutlet weak var actionContainer: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let actionBar = ActionBarView(frame: actionContainer.bounds)
-        actionBar.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
-        actionContainer.addSubview(actionBar)
-        actionBar.delegate = self
+//        actionBar.delegate = self
         
         self.autoresizingMask = UIViewAutoresizing.FlexibleHeight
     }

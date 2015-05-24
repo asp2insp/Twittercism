@@ -17,6 +17,12 @@ class ActionBarView : UIView {
     
     var delegate : TweetActionDelegate? = nil
     
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        let v = NSBundle.mainBundle().loadNibNamed("ActionsBar", owner: self, options: nil).first as! UIView
+        self.addSubview(v);
+    }
+    
     @IBAction func doAction(sender: UIButton) {
         switch sender {
         case starButton:
