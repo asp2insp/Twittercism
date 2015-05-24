@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StreamViewController : UIViewController, UITableViewDataSource {
+class StreamViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     var reactor : Reactor! = Reactor()
     
@@ -32,5 +32,9 @@ class StreamViewController : UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("tweet", forIndexPath: indexPath) as! TweetView
         cell.tweet = reactor.evaluate(Getter(keyPath: ["data", "tweets", indexPath.row]))
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("TweetDetail", sender: self)
     }
 }

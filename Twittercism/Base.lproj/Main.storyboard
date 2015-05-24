@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Profile-->
@@ -107,6 +106,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="fmk-Qp-cLm" id="9ej-0K-YmM"/>
+                                    <outlet property="delegate" destination="fmk-Qp-cLm" id="tT0-n4-9jQ"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -129,7 +129,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="0nx-ql-ul7" id="HuG-ws-ZJ5"/>
-                        <segue destination="rn1-Ox-dMx" kind="show" identifier="UserTimeline" id="cnt-n2-3Rd"/>
                         <segue destination="5PP-7S-qDJ" kind="show" identifier="TweetDetail" id="sde-Uu-PqN"/>
                     </connections>
                 </viewController>
@@ -153,61 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXp-uT-adn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2495" y="-451"/>
-        </scene>
-        <!--Timeline View Controller-->
-        <scene sceneID="NF0-SG-UVw">
-            <objects>
-                <viewController id="rn1-Ox-dMx" customClass="TimelineViewController" customModule="Twittercism" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="grE-Dh-mOq"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ids-hK-kv3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7lm-RM-JVG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GuK-N8-TGq">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nbR-ZV-1cE">
-                                <rect key="frame" x="16" y="86" width="128" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="o0Y-k5-rGa"/>
-                                    <constraint firstAttribute="height" constant="128" id="zeV-hK-K3j"/>
-                                </constraints>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="C4y-wy-VIw">
-                                <rect key="frame" x="0.0" y="-199" width="600" height="799"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="nbR-ZV-1cE" firstAttribute="leading" secondItem="7lm-RM-JVG" secondAttribute="leadingMargin" id="4Lo-Ee-e06"/>
-                            <constraint firstItem="C4y-wy-VIw" firstAttribute="leading" secondItem="7lm-RM-JVG" secondAttribute="leadingMargin" constant="-16" id="6ie-xW-gH2"/>
-                            <constraint firstAttribute="height" secondItem="C4y-wy-VIw" secondAttribute="height" multiplier="3:4" priority="750" constant="1" id="Cb5-zS-keR"/>
-                            <constraint firstItem="GuK-N8-TGq" firstAttribute="bottom" secondItem="nbR-ZV-1cE" secondAttribute="bottom" constant="-64" id="NLx-wE-GPw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GuK-N8-TGq" secondAttribute="trailing" constant="-16" id="PLv-t8-2zy"/>
-                            <constraint firstItem="GuK-N8-TGq" firstAttribute="leading" secondItem="7lm-RM-JVG" secondAttribute="leadingMargin" constant="-16" id="YXh-YJ-uY8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GuK-N8-TGq" secondAttribute="trailing" id="cWE-1u-cey"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="C4y-wy-VIw" secondAttribute="trailing" constant="-16" id="egb-D8-aQc"/>
-                            <constraint firstItem="GuK-N8-TGq" firstAttribute="height" secondItem="7lm-RM-JVG" secondAttribute="height" multiplier="1:4" id="gby-tM-c5p"/>
-                            <constraint firstItem="GuK-N8-TGq" firstAttribute="top" secondItem="7lm-RM-JVG" secondAttribute="topMargin" id="jh3-j4-KYb"/>
-                            <constraint firstItem="Ids-hK-kv3" firstAttribute="top" secondItem="C4y-wy-VIw" secondAttribute="bottom" id="n9j-2e-KLM"/>
-                            <constraint firstItem="GuK-N8-TGq" firstAttribute="leading" secondItem="7lm-RM-JVG" secondAttribute="leadingMargin" id="vZF-r7-leM"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="cWE-1u-cey"/>
-                                <exclude reference="vZF-r7-leM"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T45-cK-VVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2495" y="227"/>
+            <point key="canvasLocation" x="2471" y="-81"/>
         </scene>
         <!--Me-->
         <scene sceneID="Hse-yZ-TDn">
@@ -253,6 +198,6 @@
         <image name="user.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sn0-N8-w0I"/>
+        <segue reference="cJ3-A3-h0S"/>
     </inferredMetricsTieBreakers>
 </document>
