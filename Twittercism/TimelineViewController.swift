@@ -22,6 +22,6 @@ class TimelineViewController : UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // TODO: bind to tweet cell class
-        return TweetCell()
+        return TweetView()
     }
 }

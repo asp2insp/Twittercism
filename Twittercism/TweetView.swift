@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TweetCell : UITableViewCell, TweetActionDelegate {
+class TweetView : UITableViewCell {
     @IBOutlet weak var timestamp: UILabel!
     @IBOutlet weak var sourceIcon: UIImageView!
     @IBOutlet weak var sourceText: UILabel!
@@ -17,13 +17,9 @@ class TweetCell : UITableViewCell, TweetActionDelegate {
     @IBOutlet weak var handleLabel: UILabel!
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var tweetContent: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-//        actionBar.delegate = self
-        
-        self.autoresizingMask = UIViewAutoresizing.FlexibleHeight
-    }
+    @IBOutlet weak var starButton: UIButton!
+    @IBOutlet weak var retweetButton: UIButton!
+    @IBOutlet weak var replyButton: UIButton!
     
     var tweet : Immutable.State = Immutable.State.None {
         didSet {
@@ -43,8 +39,6 @@ class TweetCell : UITableViewCell, TweetActionDelegate {
                 sourceText.setHeight(0)
             }
             
-            self.layoutIfNeeded()
-            
             // TODO: Profile pic and timestamp
         }
     }
@@ -53,15 +47,16 @@ class TweetCell : UITableViewCell, TweetActionDelegate {
         return "4h"
     }
     
-    func onFavorite() {
-        NSLog("Favorite")
-    }
-    
-    func onReply() {
-        NSLog("Reply")
-    }
-    
-    func onRetweet() {
-        NSLog("Retweet")
+    @IBAction func doAction(sender: UIButton) {
+        switch sender {
+        case starButton:
+            NSLog("Favorite")
+        case retweetButton:
+            NSLog("Retweet")
+        case replyButton:
+            NSLog("Reply")
+        default:
+            NSLog("Unknown Sender")
+        }
     }
 }
