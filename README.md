@@ -29,5 +29,5 @@ Time spent: 15
 
 ### Walkthrough
 
-![Video Walkthrough](walkthrough)
+![Video Walkthrough](walkthrough.gif)
 
