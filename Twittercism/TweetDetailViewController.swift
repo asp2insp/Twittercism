@@ -28,6 +28,9 @@ class TweetDetailViewController : UIViewController, UITableViewDataSource {
         keys.append(reactor.observe(WriteTweetViewController.REPLY, handler: { (newState) -> () in
             self.performSegueWithIdentifier("reply", sender: self)
         }))
+        keys.append(reactor.observe(TWEETS, handler: { (newState) -> () in
+            self.tableView.reloadData()
+        }))
         
     }
     

@@ -8,18 +8,17 @@
 
 import UIKit
 
+let TWEETS = Getter(keyPath: ["stream"])
+
 class StreamViewController : UITableViewController {
     var reactor : Reactor!
     var keys : [UInt] = []
-    let TWEETS = Getter(keyPath: ["stream"])
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 160;
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.registerNib(UINib(nibName: "Tweet", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "tweet")
-        TwitterApi.loadTweets()
-        
         
         self.refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: "fetchTimeline", forControlEvents: UIControlEvents.ValueChanged)
@@ -28,6 +27,7 @@ class StreamViewController : UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        TwitterApi.loadTweets()
         super.viewDidAppear(animated)
         keys.append(reactor.observe(TWEETS, handler: { (newState) -> () in
             self.refreshControl?.endRefreshing()

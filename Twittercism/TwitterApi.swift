@@ -29,6 +29,11 @@ class TwitterApi {
     }
     
     func loadTweets() {
+        if Twitter.sharedInstance().session() == nil {
+            self.reactor.dispatch("setTweets", payload: [])
+            return
+        }
+        
         let params = ["user_id": Twitter.sharedInstance().session().userID]
         var clientError : NSError?
         
