@@ -24,16 +24,29 @@ class TweetView : UITableViewCell {
     
     @IBOutlet weak var retweetCountLabel: UILabel!
     @IBOutlet weak var favoriteCountLabel: UILabel!
+    
+    let reactor = TwitterApi.sharedInstance.reactor
+    let star = UIImage(named: "star.png")!
+    let star_yellow = UIImage(named: "star_yellow.png")!
+    let retweet = UIImage(named: "retweet.png")!
+    let retweet_green = UIImage(named: "retweet_green.png")!
+    
+    var tweetIdString : String!
+    
     var tweet : Immutable.State = Immutable.State.None {
         didSet {
             var contentTweet : Immutable.State = tweet
             
             if let favorited = tweet.getIn(["favorited"]).toSwift() as? Bool where favorited {
-                starButton.imageView?.image = UIImage(named: "star_yellow.png")
+                starButton.setImage(star_yellow, forState: UIControlState.Normal)
+            } else {
+                starButton.setImage(star, forState: UIControlState.Normal)
             }
             
             if let retweeted = tweet.getIn(["retweeted"]).toSwift() as? Bool where retweeted {
-                retweetButton.imageView?.image = UIImage(named: "retweet_green.png")
+                retweetButton.setImage(retweet_green, forState: UIControlState.Normal)
+            } else {
+                retweetButton.setImage(retweet, forState: UIControlState.Normal)
             }
             
             if tweet.containsKey("retweeted_status") {
@@ -72,6 +85,8 @@ class TweetView : UITableViewCell {
             }
             
             timestamp.text = formatTime(contentTweet.getIn(["created_at"]).toSwift() as! String)
+            
+            tweetIdString = contentTweet.getIn(["id_str"]).toSwift() as! String
         }
     }
     
@@ -91,9 +106,9 @@ class TweetView : UITableViewCell {
     @IBAction func doAction(sender: UIButton) {
         switch sender {
         case starButton:
-            NSLog("Favorite")
+            reactor.dispatch("toggleFavoriteTweet", payload: tweetIdString)
         case retweetButton:
-            NSLog("Retweet")
+            reactor.dispatch("retweet", payload: tweetIdString)
         case replyButton:
             NSLog("Reply")
         default:
