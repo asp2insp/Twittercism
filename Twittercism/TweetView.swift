@@ -23,9 +23,18 @@ class TweetView : UITableViewCell {
     @IBOutlet weak var retweetHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var retweetCountLabel: UILabel!
+    @IBOutlet weak var favoriteCountLabel: UILabel!
     var tweet : Immutable.State = Immutable.State.None {
         didSet {
             var contentTweet : Immutable.State = tweet
+            
+            if let favorited = tweet.getIn(["favorited"]).toSwift() as? Bool where favorited {
+                starButton.imageView?.image = UIImage(named: "star_yellow.png")
+            }
+            
+            if let retweeted = tweet.getIn(["retweeted"]).toSwift() as? Bool where retweeted {
+                retweetButton.imageView?.image = UIImage(named: "retweet_green.png")
+            }
             
             if tweet.containsKey("retweeted_status") {
                 retweetHeightConstraint.constant = 24
@@ -54,6 +63,12 @@ class TweetView : UITableViewCell {
                 retweetCountLabel.text = "\(retweetCount)"
             } else {
                 retweetCountLabel.text = ""
+            }
+            
+            if let favoriteCount = contentTweet.getIn(["favorite_count"]).toSwift() as? Int where favoriteCount > 0 {
+                favoriteCountLabel.text = "\(favoriteCount)"
+            } else {
+                favoriteCountLabel.text = ""
             }
             
             timestamp.text = formatTime(contentTweet.getIn(["created_at"]).toSwift() as! String)
