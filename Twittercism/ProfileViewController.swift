@@ -35,6 +35,8 @@ class ProfileViewController : UIViewController {
         } else {
             placeLoginButton()
         }
+        logoutButton.layer.cornerRadius = 5;
+        logoutButton.clipsToBounds = true;
     }
     
     func placeLogoutButton() {

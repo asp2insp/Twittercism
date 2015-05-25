@@ -95,6 +95,12 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id4-dv-qnM">
+                    <rect key="frame" x="320" y="569.5" width="42" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -124,7 +130,9 @@
                 <constraint firstItem="LIj-j8-t7g" firstAttribute="trailing" secondItem="obb-gh-2cA" secondAttribute="trailing" id="eYu-9c-JNC"/>
                 <constraint firstAttribute="trailing" secondItem="G5H-qE-pnR" secondAttribute="trailing" constant="4" id="gjg-4u-tH8"/>
                 <constraint firstItem="jc0-7A-o2y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="hY4-hR-Smt"/>
+                <constraint firstItem="Id4-dv-qnM" firstAttribute="leading" secondItem="21q-9E-hy6" secondAttribute="trailing" constant="8" id="mLf-JK-t4e"/>
                 <constraint firstAttribute="centerX" secondItem="21q-9E-hy6" secondAttribute="centerX" id="pNd-uP-WXc"/>
+                <constraint firstItem="21q-9E-hy6" firstAttribute="centerY" secondItem="Id4-dv-qnM" secondAttribute="centerY" id="qxl-N7-UEd"/>
                 <constraint firstAttribute="bottom" secondItem="21q-9E-hy6" secondAttribute="bottom" constant="8" id="sR6-OV-IaT"/>
                 <constraint firstAttribute="centerY" secondItem="QPB-j1-LPL" secondAttribute="centerY" id="xm5-nM-7zY"/>
             </constraints>
@@ -143,6 +151,7 @@
                 <outlet property="profilePic" destination="LIj-j8-t7g" id="zGM-4i-i7n"/>
                 <outlet property="replyButton" destination="wss-1f-OeU" id="dWG-z6-kVK"/>
                 <outlet property="retweetButton" destination="21q-9E-hy6" id="OA5-Ct-swV"/>
+                <outlet property="retweetCountLabel" destination="Id4-dv-qnM" id="YUg-0A-Wtc"/>
                 <outlet property="retweetHeightConstraint" destination="shL-ed-F4p" id="jzA-VG-6tY"/>
                 <outlet property="sourceIcon" destination="obb-gh-2cA" id="PsP-x3-doh"/>
                 <outlet property="sourceText" destination="jc0-7A-o2y" id="Rpp-ef-Pvb"/>

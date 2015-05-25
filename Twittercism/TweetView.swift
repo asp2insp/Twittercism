@@ -22,11 +22,12 @@ class TweetView : UITableViewCell {
     @IBOutlet weak var replyButton: UIButton!
     @IBOutlet weak var retweetHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var retweetCountLabel: UILabel!
     var tweet : Immutable.State = Immutable.State.None {
         didSet {
             var contentTweet : Immutable.State = tweet
             
-            if let retweetCount = tweet.getIn(["retweet_count"]).toSwift() as? Int where retweetCount > 0 {
+            if tweet.containsKey("retweeted_status") {
                 retweetHeightConstraint.constant = 24
                 sourceText.hidden = false
                 let retweetAuthor = tweet.getIn(["user", "name"]).toSwift() as? String ?? "Unknown"
@@ -43,12 +44,33 @@ class TweetView : UITableViewCell {
             let authorName = contentTweet.getIn(["user", "name"]).toSwift() as? String ?? "Unknown"
             localizedName.text = authorName
             
-            // TODO: Profile pic and timestamp
+            if let profileUrl = contentTweet.getIn(["user", "profile_image_url"]).toSwift() as? String {
+                profilePic.setImageWithURL(NSURL(string: profileUrl))
+                profilePic.layer.cornerRadius = 10; // this value vary as per your desire
+                profilePic.clipsToBounds = true;
+            }
+            
+            if let retweetCount = contentTweet.getIn(["retweet_count"]).toSwift() as? Int where retweetCount > 0 {
+                retweetCountLabel.text = "\(retweetCount)"
+            } else {
+                retweetCountLabel.text = ""
+            }
+            
+            timestamp.text = formatTime(contentTweet.getIn(["created_at"]).toSwift() as! String)
         }
     }
     
-    func formatTime(timestamp: time_value) -> String {
-        return "4h"
+    func formatTime(timestamp: String) -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat =  "EEE MMM dd HH:mm:ss +0000 yyyy"
+        let date = formatter.dateFromString(timestamp)
+        let seconds = abs(NSDate().timeIntervalSinceDate(date!))
+        if seconds > 86400 {
+            formatter.dateFormat = "MMM dd"
+            return formatter.stringFromDate(date!)
+        } else {
+            return "\(Int(round(seconds/3600)))h"
+        }
     }
     
     @IBAction func doAction(sender: UIButton) {
