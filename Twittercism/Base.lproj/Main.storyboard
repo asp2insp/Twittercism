@@ -154,7 +154,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="5PP-7S-qDJ" kind="show" id="2CT-Io-Bhj"/>
+                        <segue destination="5PP-7S-qDJ" kind="show" identifier="TweetDetail" id="2CT-Io-Bhj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZ0-e4-f25" userLabel="First Responder" sceneMemberID="firstResponder"/>

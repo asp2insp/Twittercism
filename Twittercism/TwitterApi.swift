@@ -13,7 +13,7 @@ class TwitterApi {
     static let sharedInstance = TwitterApi()
     let reactor = Reactor()
     let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/show.json"
-    let timelineEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
+    let timelineEndpoint = "https://api.twitter.com/1.1/statuses/home_timeline.json"
     
     init() {
         reactor.registerStore("stream", store: StreamStore())
@@ -40,7 +40,6 @@ class TwitterApi {
                     NSJSONSerialization.JSONObjectWithData(data,
                         options: nil,
                         error: &jsonError)
-                    println(json)
                     self.reactor.dispatch("setTweets", payload: json!)
                 }
                 else {

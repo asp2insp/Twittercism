@@ -24,10 +24,10 @@ class TweetView : UITableViewCell {
     
     var tweet : Immutable.State = Immutable.State.None {
         didSet {
-            tweetContent.text = tweet.getIn(["content"]).toSwift() as? String ?? "Lorem Ipsum dolor sit amet..."
-            let authorHandle = tweet.getIn(["author"]).toSwift() as? String ?? "Unknown"
+            tweetContent.text = tweet.getIn(["text"]).toSwift() as? String ?? "Lorem Ipsum dolor sit amet..."
+            let authorHandle = tweet.getIn(["user", "name"]).toSwift() as? String ?? "Unknown"
             handleLabel.text = "@\(authorHandle)"
-            let authorName = tweet.getIn(["name"]).toSwift() as? String ?? "Unknown"
+            let authorName = tweet.getIn(["user", "screen_name"]).toSwift() as? String ?? "Unknown"
             localizedName.text = authorName
             
             if let isRetweet = tweet.getIn(["retweet"]).toSwift() as? Bool where isRetweet {

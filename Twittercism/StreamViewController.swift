@@ -10,6 +10,8 @@ import UIKit
 
 class StreamViewController : UITableViewController {
     var reactor : Reactor!
+    var keys : [UInt] = []
+    let TWEETS = Getter(keyPath: ["stream"])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +25,10 @@ class StreamViewController : UITableViewController {
         refreshControl?.addTarget(self, action: "fetchTimeline", forControlEvents: UIControlEvents.ValueChanged)
         
         reactor = TwitterApi.sharedInstance.reactor
-        reactor.observe(Getter(keyPath: []), handler: { (newState) -> () in
+        keys.append(reactor.observe(TWEETS, handler: { (newState) -> () in
             self.refreshControl?.endRefreshing()
-        })
+            self.tableView.reloadData()
+        }))
     }
     
     func fetchTimeline() {
@@ -37,13 +40,12 @@ class StreamViewController : UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO: Bind to reactor
-        return 3
+        return reactor.evaluate(TWEETS).count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tweet", forIndexPath: indexPath) as! TweetView
-        cell.tweet = reactor.evaluate(Getter(keyPath: ["data", "tweets", indexPath.row]))
+        cell.tweet = reactor.evaluate(Getter(keyPath: ["stream", indexPath.row]))
         return cell
     }
     
