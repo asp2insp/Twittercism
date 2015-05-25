@@ -25,10 +25,22 @@ class StreamViewController : UITableViewController {
         refreshControl?.addTarget(self, action: "fetchTimeline", forControlEvents: UIControlEvents.ValueChanged)
         
         reactor = TwitterApi.sharedInstance.reactor
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         keys.append(reactor.observe(TWEETS, handler: { (newState) -> () in
             self.refreshControl?.endRefreshing()
             self.tableView.reloadData()
         }))
+        keys.append(reactor.observe(WriteTweetViewController.REPLY, handler: { (newState) -> () in
+            self.performSegueWithIdentifier("reply", sender: self)
+        }))
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        reactor.unobserve(keys)
     }
     
     func fetchTimeline() {
@@ -50,6 +62,7 @@ class StreamViewController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        reactor.dispatch("setDetail", payload: indexPath.row)
         self.performSegueWithIdentifier("TweetDetail", sender: self)
     }
 }

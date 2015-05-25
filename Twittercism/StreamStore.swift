@@ -19,6 +19,11 @@ class StreamStore : Store {
                     let currentlyFavorited = one.getIn(["favorited"]).toSwift() as! Bool
                     let currentFavoriteCount = one.getIn(["favorite_count"]).toSwift() as! Int
                     let diff = currentlyFavorited ? -1 : 1
+                    if currentlyFavorited {
+                        TwitterApi.unfavoriteTweet(tweetId as! String)
+                    } else {
+                        TwitterApi.favoriteTweet(tweetId as! String)
+                    }
                     return one.setIn(["favorited"], withValue: Immutable.toState(!currentlyFavorited)).setIn(["favorite_count"], withValue: Immutable.toState(currentFavoriteCount + diff))
                 } else {
                     return one
@@ -31,6 +36,7 @@ class StreamStore : Store {
                     let currentlyRetweeted = one.getIn(["retweeted"]).toSwift() as! Bool
                     
                     if !currentlyRetweeted {
+                        TwitterApi.retweet(tweetId as! String)
                         let newCount = one.getIn(["retweet_count"]).toSwift() as! Int + 1
                         return one.setIn(["retweeted"], withValue: Immutable.toState(true)).setIn(["retweet_count"], withValue: Immutable.toState(newCount))
                     }
@@ -41,6 +47,6 @@ class StreamStore : Store {
     }
     
     override func getInitialState() -> Immutable.State {
-        return Immutable.toState([:])
+        return Immutable.toState([])
     }
 }

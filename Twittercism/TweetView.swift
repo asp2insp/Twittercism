@@ -32,6 +32,7 @@ class TweetView : UITableViewCell {
     let retweet_green = UIImage(named: "retweet_green.png")!
     
     var tweetIdString : String!
+    var replyName : String!
     
     var tweet : Immutable.State = Immutable.State.None {
         didSet {
@@ -87,6 +88,7 @@ class TweetView : UITableViewCell {
             timestamp.text = formatTime(contentTweet.getIn(["created_at"]).toSwift() as! String)
             
             tweetIdString = contentTweet.getIn(["id_str"]).toSwift() as! String
+            replyName = contentTweet.getIn(["user", "screen_name"]).toSwift() as! String
         }
     }
     
@@ -110,7 +112,7 @@ class TweetView : UITableViewCell {
         case retweetButton:
             reactor.dispatch("retweet", payload: tweetIdString)
         case replyButton:
-            NSLog("Reply")
+            reactor.dispatch("setReply", payload: replyName)
         default:
             NSLog("Unknown Sender")
         }

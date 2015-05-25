@@ -32,7 +32,7 @@
 		FEA706FD1B0AD6C400A401D4 /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA706FC1B0AD6C400A401D4 /* ProfileStore.swift */; };
 		FEA706FF1B0AD6CE00A401D4 /* TweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA706FE1B0AD6CE00A401D4 /* TweetView.swift */; };
 		FEA707071B0AD78D00A401D4 /* WriteTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA707061B0AD78D00A401D4 /* WriteTweetViewController.swift */; };
-		FEA707091B0AD7D600A401D4 /* WriteTweetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA707081B0AD7D600A401D4 /* WriteTweetStore.swift */; };
+		FEA707091B0AD7D600A401D4 /* UIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA707081B0AD7D600A401D4 /* UIStore.swift */; };
 		FEA7070C1B0AD82200A401D4 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7070B1B0AD82200A401D4 /* AccountManager.swift */; };
 		FEA7070E1B0AD83000A401D4 /* TwitterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7070D1B0AD83000A401D4 /* TwitterApi.swift */; };
 		FEA707171B0B9DE400A401D4 /* ChangeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA707101B0B9DE400A401D4 /* ChangeObserver.swift */; };
@@ -92,7 +92,7 @@
 		FEA706FC1B0AD6C400A401D4 /* ProfileStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileStore.swift; sourceTree = "<group>"; };
 		FEA706FE1B0AD6CE00A401D4 /* TweetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetView.swift; sourceTree = "<group>"; };
 		FEA707061B0AD78D00A401D4 /* WriteTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteTweetViewController.swift; sourceTree = "<group>"; };
-		FEA707081B0AD7D600A401D4 /* WriteTweetStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteTweetStore.swift; sourceTree = "<group>"; };
+		FEA707081B0AD7D600A401D4 /* UIStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStore.swift; sourceTree = "<group>"; };
 		FEA7070B1B0AD82200A401D4 /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		FEA7070D1B0AD83000A401D4 /* TwitterApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterApi.swift; sourceTree = "<group>"; };
 		FEA707101B0B9DE400A401D4 /* ChangeObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeObserver.swift; sourceTree = "<group>"; };
@@ -265,7 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				FEA707061B0AD78D00A401D4 /* WriteTweetViewController.swift */,
-				FEA707081B0AD7D600A401D4 /* WriteTweetStore.swift */,
+				FEA707081B0AD7D600A401D4 /* UIStore.swift */,
 			);
 			name = WriteTweet;
 			sourceTree = "<group>";
@@ -447,7 +447,7 @@
 				FEA707181B0B9DE400A401D4 /* Evaluator.swift in Sources */,
 				FEA706FB1B0AD6BC00A401D4 /* StreamStore.swift in Sources */,
 				FEA7071C1B0B9DE400A401D4 /* Store.swift in Sources */,
-				FEA707091B0AD7D600A401D4 /* WriteTweetStore.swift in Sources */,
+				FEA707091B0AD7D600A401D4 /* UIStore.swift in Sources */,
 				FE77819C1B11A2D7006EA4D0 /* TweetDetailViewController.swift in Sources */,
 				FEA707191B0B9DE400A401D4 /* Getter.swift in Sources */,
 				FEA7070C1B0AD82200A401D4 /* AccountManager.swift in Sources */,
