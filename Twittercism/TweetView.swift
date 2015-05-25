@@ -24,21 +24,24 @@ class TweetView : UITableViewCell {
     
     var tweet : Immutable.State = Immutable.State.None {
         didSet {
-            tweetContent.text = tweet.getIn(["text"]).toSwift() as? String ?? "Lorem Ipsum dolor sit amet..."
-            let authorHandle = tweet.getIn(["user", "name"]).toSwift() as? String ?? "Unknown"
-            handleLabel.text = "@\(authorHandle)"
-            let authorName = tweet.getIn(["user", "screen_name"]).toSwift() as? String ?? "Unknown"
-            localizedName.text = authorName
+            var contentTweet : Immutable.State = tweet
             
-            if let isRetweet = tweet.getIn(["retweet"]).toSwift() as? Bool where isRetweet {
+            if let retweetCount = tweet.getIn(["retweet_count"]).toSwift() as? Int where retweetCount > 0 {
                 retweetHeightConstraint.constant = 24
                 sourceText.hidden = false
-                let retweetAuthor = tweet.getIn(["retweet_from"]).toSwift() as? String ?? "Unknown"
+                let retweetAuthor = tweet.getIn(["user", "name"]).toSwift() as? String ?? "Unknown"
                 sourceText.text = "\(retweetAuthor) retweeted"
+                contentTweet = tweet.getIn(["retweeted_status"])
             } else {
                 retweetHeightConstraint.constant = 0
                 sourceText.hidden = true
             }
+            
+            tweetContent.text = contentTweet.getIn(["text"]).toSwift() as? String ?? "Lorem Ipsum dolor sit amet..."
+            let authorHandle = contentTweet.getIn(["user", "screen_name"]).toSwift() as? String ?? "Unknown"
+            handleLabel.text = "@\(authorHandle)"
+            let authorName = contentTweet.getIn(["user", "name"]).toSwift() as? String ?? "Unknown"
+            localizedName.text = authorName
             
             // TODO: Profile pic and timestamp
         }
