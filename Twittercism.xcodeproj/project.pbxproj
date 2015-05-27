@@ -21,6 +21,8 @@
 		FE7781A51B12387C006EA4D0 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7781A11B12387C006EA4D0 /* TwitterCore.framework */; };
 		FE7781AD1B12D1F0006EA4D0 /* star_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7781AC1B12D1F0006EA4D0 /* star_yellow.png */; };
 		FE7781AF1B12D2BA006EA4D0 /* retweet_green.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7781AE1B12D2BA006EA4D0 /* retweet_green.png */; };
+		FE7781B21B14270A006EA4D0 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7781B11B14270A006EA4D0 /* TimelineViewController.swift */; };
+		FE7781B41B142715006EA4D0 /* TimelineStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7781B31B142715006EA4D0 /* TimelineStore.swift */; };
 		FEA706C81B0AD1FE00A401D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA706C71B0AD1FE00A401D4 /* AppDelegate.swift */; };
 		FEA706CA1B0AD1FE00A401D4 /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA706C91B0AD1FE00A401D4 /* StreamViewController.swift */; };
 		FEA706CD1B0AD1FE00A401D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA706CB1B0AD1FE00A401D4 /* Main.storyboard */; };
@@ -77,6 +79,8 @@
 		FE7781A91B12A8CA006EA4D0 /* Twittercism-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Twittercism-Bridging-Header.h"; sourceTree = "<group>"; };
 		FE7781AC1B12D1F0006EA4D0 /* star_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_yellow.png; sourceTree = "<group>"; };
 		FE7781AE1B12D2BA006EA4D0 /* retweet_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retweet_green.png; sourceTree = "<group>"; };
+		FE7781B11B14270A006EA4D0 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		FE7781B31B142715006EA4D0 /* TimelineStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineStore.swift; sourceTree = "<group>"; };
 		FEA706C21B0AD1FE00A401D4 /* Twittercism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twittercism.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA706C61B0AD1FE00A401D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEA706C71B0AD1FE00A401D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +156,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE7781B01B1426EC006EA4D0 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				FE7781B11B14270A006EA4D0 /* TimelineViewController.swift */,
+				FE7781B31B142715006EA4D0 /* TimelineStore.swift */,
+			);
+			name = Timeline;
+			sourceTree = "<group>";
+		};
 		FEA706B91B0AD1FD00A401D4 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +188,7 @@
 		FEA706C41B0AD1FE00A401D4 /* Twittercism */ = {
 			isa = PBXGroup;
 			children = (
+				FE7781B01B1426EC006EA4D0 /* Timeline */,
 				FEA707261B0C208300A401D4 /* Tweet */,
 				FEA706F51B0AD45E00A401D4 /* Nuclear */,
 				FEA706C71B0AD1FE00A401D4 /* AppDelegate.swift */,
@@ -452,8 +466,10 @@
 				FEA707191B0B9DE400A401D4 /* Getter.swift in Sources */,
 				FEA7070C1B0AD82200A401D4 /* AccountManager.swift in Sources */,
 				FEA707171B0B9DE400A401D4 /* ChangeObserver.swift in Sources */,
+				FE7781B21B14270A006EA4D0 /* TimelineViewController.swift in Sources */,
 				FEA706CA1B0AD1FE00A401D4 /* StreamViewController.swift in Sources */,
 				FEA706C81B0AD1FE00A401D4 /* AppDelegate.swift in Sources */,
+				FE7781B41B142715006EA4D0 /* TimelineStore.swift in Sources */,
 				FEA706FF1B0AD6CE00A401D4 /* TweetView.swift in Sources */,
 				FEA7071D1B0B9DE400A401D4 /* Tag.swift in Sources */,
 				FEA7071A1B0B9DE400A401D4 /* Immutable.swift in Sources */,
