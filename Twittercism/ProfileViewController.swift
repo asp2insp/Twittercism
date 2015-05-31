@@ -40,7 +40,6 @@ class ProfileViewController : UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         reactor = TwitterApi.sharedInstance.reactor
-        reactor.dispatch("setTimelineUser", payload: "me")
         tableView.registerNib(UINib(nibName: "Tweet", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "tweet")
         
 //        headerView.setTranslatesAutoresizingMaskIntoConstraints(false)

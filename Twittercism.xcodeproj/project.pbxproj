@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5555F9E6E6871EE0D670B9D2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4BC6148E3590B3E02866C4 /* libPods.a */; };
+		FE39A2091B1B9F67008C4B28 /* DrawerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39A2081B1B9F67008C4B28 /* DrawerSegue.swift */; };
+		FE39A20B1B1B9FAE008C4B28 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39A20A1B1B9FAE008C4B28 /* DrawerViewController.swift */; };
 		FE7781931B119EE9006EA4D0 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE77818F1B119EE9006EA4D0 /* user@2x.png */; };
 		FE7781941B119EE9006EA4D0 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7781901B119EE9006EA4D0 /* user.png */; };
 		FE7781951B119EE9006EA4D0 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7781911B119EE9006EA4D0 /* home@2x.png */; };
@@ -65,6 +67,8 @@
 		1F4BC6148E3590B3E02866C4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E321D1E770453E919162E9F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D83AEA2F4B44C15ACDD6EC2E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FE39A2081B1B9F67008C4B28 /* DrawerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerSegue.swift; sourceTree = "<group>"; };
+		FE39A20A1B1B9FAE008C4B28 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		FE77818F1B119EE9006EA4D0 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
 		FE7781901B119EE9006EA4D0 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		FE7781911B119EE9006EA4D0 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
@@ -156,6 +160,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE39A2071B1B9F50008C4B28 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				FE39A2081B1B9F67008C4B28 /* DrawerSegue.swift */,
+				FE39A20A1B1B9FAE008C4B28 /* DrawerViewController.swift */,
+			);
+			name = Drawer;
+			sourceTree = "<group>";
+		};
 		FE7781B01B1426EC006EA4D0 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +200,7 @@
 		FEA706C41B0AD1FE00A401D4 /* Twittercism */ = {
 			isa = PBXGroup;
 			children = (
+				FE39A2071B1B9F50008C4B28 /* Drawer */,
 				FE7781B01B1426EC006EA4D0 /* Timeline */,
 				FEA707261B0C208300A401D4 /* Tweet */,
 				FEA706F51B0AD45E00A401D4 /* Nuclear */,
@@ -463,6 +477,7 @@
 				FEA706FB1B0AD6BC00A401D4 /* StreamStore.swift in Sources */,
 				FEA7071C1B0B9DE400A401D4 /* Store.swift in Sources */,
 				FEA707091B0AD7D600A401D4 /* UIStore.swift in Sources */,
+				FE39A20B1B1B9FAE008C4B28 /* DrawerViewController.swift in Sources */,
 				FE77819C1B11A2D7006EA4D0 /* TweetDetailViewController.swift in Sources */,
 				FEA707191B0B9DE400A401D4 /* Getter.swift in Sources */,
 				FEA7070C1B0AD82200A401D4 /* AccountManager.swift in Sources */,
@@ -477,6 +492,7 @@
 				FEA707071B0AD78D00A401D4 /* WriteTweetViewController.swift in Sources */,
 				FEA7072A1B0D6FE900A401D4 /* Utils.swift in Sources */,
 				FEA7071B1B0B9DE400A401D4 /* Reactor.swift in Sources */,
+				FE39A2091B1B9F67008C4B28 /* DrawerSegue.swift in Sources */,
 				FEA7070E1B0AD83000A401D4 /* TwitterApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
