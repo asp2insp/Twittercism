@@ -14,6 +14,10 @@ class ProfileViewController : UIViewController {
     @IBOutlet weak var loginButtonPlaceholder: UIView!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var loginButton: TWTRLogInButton!
+    @IBOutlet weak var headerHeight: NSLayoutConstraint!
+    
+    let kMAX_HEADER_HEIGHT = 200
+    let kMIN_HEADER_HEIGHT = 44
     
     override func viewDidLoad() {
         super.viewDidLoad()

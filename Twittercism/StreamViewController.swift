@@ -16,8 +16,6 @@ class StreamViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.estimatedRowHeight = 160;
-        tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.registerNib(UINib(nibName: "Tweet", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "tweet")
         
         self.refreshControl = UIRefreshControl()
@@ -59,6 +57,14 @@ class StreamViewController : UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("tweet", forIndexPath: indexPath) as! TweetView
         cell.tweet = reactor.evaluate(Getter(keyPath: ["stream", indexPath.row]))
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 160
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
