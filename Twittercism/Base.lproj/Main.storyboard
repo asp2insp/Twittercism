@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spe-IU-kvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1767" y="833"/>
+            <point key="canvasLocation" x="2579" y="833"/>
         </scene>
         <!--Write Tweet View Controller-->
         <scene sceneID="BlL-IM-rtt">
@@ -296,7 +296,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFI-iS-dVQ" userLabel="DrawerMenu">
-                                <rect key="frame" x="0.0" y="20" width="200" height="580"/>
+                                <rect key="frame" x="0.0" y="20" width="100" height="580"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ib7-8W-q9N">
                                         <rect key="frame" x="8" y="8" width="58" height="30"/>
@@ -322,36 +322,56 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="ib7-8W-q9N" firstAttribute="leading" secondItem="DFI-iS-dVQ" secondAttribute="leading" constant="8" id="U0R-KU-3lN"/>
-                                    <constraint firstAttribute="width" constant="200" id="UZZ-se-UEs"/>
+                                    <constraint firstAttribute="width" constant="100" id="UZZ-se-UEs"/>
                                     <constraint firstItem="82Q-Wa-9On" firstAttribute="leading" secondItem="DFI-iS-dVQ" secondAttribute="leading" constant="8" id="ZhQ-3Z-NKk"/>
                                     <constraint firstItem="ib7-8W-q9N" firstAttribute="top" secondItem="DFI-iS-dVQ" secondAttribute="top" constant="8" id="jl9-zm-7BO"/>
                                     <constraint firstItem="82Q-Wa-9On" firstAttribute="top" secondItem="ib7-8W-q9N" secondAttribute="bottom" constant="8" id="xXp-fa-YUD"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Km7-kn-ExF">
-                                <rect key="frame" x="200" y="20" width="400" height="580"/>
+                                <rect key="frame" x="100" y="20" width="600" height="580"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Km7-kn-ExF" firstAttribute="width" secondItem="Sfc-jh-88O" secondAttribute="width" id="5GQ-W5-DYf"/>
                             <constraint firstAttribute="trailing" secondItem="Km7-kn-ExF" secondAttribute="trailing" id="8bv-Xo-YAD"/>
                             <constraint firstItem="DFI-iS-dVQ" firstAttribute="leading" secondItem="Sfc-jh-88O" secondAttribute="leading" id="CJv-Fp-lgc"/>
+                            <constraint firstItem="Km7-kn-ExF" firstAttribute="leading" secondItem="Sfc-jh-88O" secondAttribute="leadingMargin" constant="84" id="JQL-Sz-4cm"/>
+                            <constraint firstItem="Km7-kn-ExF" firstAttribute="leading" secondItem="Sfc-jh-88O" secondAttribute="leadingMargin" constant="84" id="MzP-Gr-bxY"/>
                             <constraint firstItem="Km7-kn-ExF" firstAttribute="top" secondItem="uCW-Vi-Fhu" secondAttribute="bottom" id="cIc-Lm-wgt"/>
                             <constraint firstAttribute="bottom" secondItem="DFI-iS-dVQ" secondAttribute="bottom" id="fC0-p9-m5h"/>
                             <constraint firstItem="DFI-iS-dVQ" firstAttribute="top" secondItem="uCW-Vi-Fhu" secondAttribute="bottom" id="few-XD-a7H"/>
                             <constraint firstItem="Km7-kn-ExF" firstAttribute="leading" secondItem="DFI-iS-dVQ" secondAttribute="trailing" id="fl0-wA-dx7"/>
                             <constraint firstItem="1QH-aN-wKD" firstAttribute="top" secondItem="Km7-kn-ExF" secondAttribute="bottom" id="ttl-hc-9t7"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8bv-Xo-YAD"/>
+                                <exclude reference="JQL-Sz-4cm"/>
+                                <exclude reference="fl0-wA-dx7"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="h5j-LR-6BG" appends="YES" id="76W-fL-v0W"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="Km7-kn-ExF" id="0uY-Rj-sxr"/>
+                        <outlet property="leftSideConstraint" destination="MzP-Gr-bxY" id="AG5-ye-h9s"/>
                         <outlet property="profileButton" destination="82Q-Wa-9On" id="iKE-Z9-mkD"/>
                         <outlet property="timelineButton" destination="ib7-8W-q9N" id="IYO-hS-ASS"/>
-                        <segue destination="JOz-zZ-jAx" kind="custom" identifier="drawer_Timeline" customClass="DrawerSegue" customModule="Twittercism" customModuleProvider="target" id="qv3-kO-Wmk"/>
-                        <segue destination="PvJ-W8-uMv" kind="custom" identifier="drawer_Profile" customClass="DrawerSegue" customModule="Twittercism" customModuleProvider="target" id="SqB-Ra-kGH"/>
+                        <segue destination="0ZC-Nu-P4T" kind="custom" identifier="drawer_Timeline" customClass="DrawerSegue" customModule="Twittercism" id="qv3-kO-Wmk"/>
+                        <segue destination="eAd-uM-x4b" kind="custom" identifier="drawer_Profile" customClass="DrawerSegue" customModule="Twittercism" id="SqB-Ra-kGH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtw-ih-AtT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="h5j-LR-6BG">
+                    <connections>
+                        <action selector="handlePanForDrawer:" destination="enj-EJ-8uk" id="rTO-tn-pLM"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="771" y="373"/>
         </scene>
@@ -392,7 +412,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZ0-e4-f25" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776" y="-81"/>
+            <point key="canvasLocation" x="2588" y="-81"/>
         </scene>
         <!--Tweet Detail-->
         <scene sceneID="3ET-E3-D6g">
@@ -429,7 +449,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXp-uT-adn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2471" y="-81"/>
+            <point key="canvasLocation" x="3283" y="-81"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="id4-8r-ju7">
@@ -449,12 +469,48 @@
             </objects>
             <point key="canvasLocation" x="2197" y="1584"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hny-p6-EZN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0ZC-Nu-P4T" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UF6-xO-NdL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JOz-zZ-jAx" kind="relationship" relationship="rootViewController" id="Lqk-lO-sMK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xw1-tj-zph" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1776" y="-81"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rp7-gj-ogu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eAd-uM-x4b" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nK4-2X-y4y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PvJ-W8-uMv" kind="relationship" relationship="rootViewController" id="o7p-bG-QAl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xlv-hp-XJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1767" y="833"/>
+        </scene>
     </scenes>
     <resources>
         <image name="feather.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8GF-eo-iWP"/>
         <segue reference="sn0-N8-w0I"/>
+        <segue reference="8GF-eo-iWP"/>
     </inferredMetricsTieBreakers>
 </document>
