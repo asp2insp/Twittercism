@@ -29,15 +29,25 @@ class DrawerViewController : UIViewController {
                 if oldVC == activeViewController {
                     return
                 }
-                oldVC.willMoveToParentViewController(nil)
-                oldVC.view.removeFromSuperview()
-                oldVC.removeFromParentViewController()
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    oldVC.view.alpha = 0.0
+                }, completion: { (success) -> Void in
+                    oldVC.willMoveToParentViewController(nil)
+                    oldVC.view.removeFromSuperview()
+                    oldVC.removeFromParentViewController()
+                })
+
             }
             if let newVC = activeViewController {
                 self.addChildViewController(newVC)
+                newVC.view.alpha = 0
                 newVC.view.frame = self.containerView.bounds
                 self.containerView.addSubview(newVC.view)
                 newVC.didMoveToParentViewController(self)
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    newVC.view.alpha = 1.0
+                    return
+                })
             }
         }
     }
@@ -51,7 +61,7 @@ class DrawerViewController : UIViewController {
     func openDrawer() {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.leftSideConstraint.constant = 84
-            self.containerView.setNeedsLayout()
+            self.containerView.layoutIfNeeded()
         })
     }
     
@@ -77,7 +87,7 @@ class DrawerViewController : UIViewController {
     func closeDrawer() {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.leftSideConstraint.constant = -16
-            self.containerView.setNeedsLayout()
+            self.containerView.layoutIfNeeded()
         })
     }
     
