@@ -1,16 +1,17 @@
 //
-//  ViewController.swift
+//  MentionsViewController.swift
 //  Twittercism
 //
-//  Created by Josiah Gaskin on 5/18/15.
+//  Created by Josiah Gaskin on 5/31/15.
 //  Copyright (c) 2015 Josiah Gaskin. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-let TWEETS = Getter(keyPath: ["stream"])
+let MENTIONS = Getter(keyPath: ["mentions"])
 
-class StreamViewController : UITableViewController {
+class MentionsViewController : UITableViewController {
     var reactor : Reactor!
     var keys : [UInt] = []
     
@@ -19,11 +20,11 @@ class StreamViewController : UITableViewController {
         tableView.registerNib(UINib(nibName: "Tweet", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "tweet")
         
         self.refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: "fetchTimeline", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.addTarget(self, action: "fetchMentions", forControlEvents: UIControlEvents.ValueChanged)
         
         reactor = TwitterApi.sharedInstance.reactor
-        TwitterApi.loadTweets()
-        self.title = "Timeline"
+        TwitterApi.loadMentions()
+        self.title = "Mentions"
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -32,15 +33,6 @@ class StreamViewController : UITableViewController {
             self.refreshControl?.endRefreshing()
             self.tableView.reloadData()
         }))
-        keys.append(reactor.observe(WriteTweetViewController.REPLY, handler: { (newState) -> () in
-            self.performSegueWithIdentifier("reply", sender: self)
-        }))
-        keys.append(reactor.observe(TARGET_TIMELINE, handler: { (newState) -> () in
-            println(self.reactor.evaluateToSwift(CURRENT_TAB) as? String)
-            if let tab = self.reactor.evaluateToSwift(CURRENT_TAB) as? String where tab == "drawer_Timeline" {
-                self.performSegueWithIdentifier("profile", sender: self)
-            }
-        }))
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -48,21 +40,17 @@ class StreamViewController : UITableViewController {
         reactor.unobserve(keys)
     }
     
-    func fetchTimeline() {
-        TwitterApi.loadTweets()
+    func fetchMentions() {
+        TwitterApi.loadMentions()
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        // TODO: Infinite scroll
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reactor.evaluate(TWEETS).count
+        return reactor.evaluate(MENTIONS).count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tweet", forIndexPath: indexPath) as! TweetView
-        cell.tweet = reactor.evaluate(TWEETS.extendKeyPath([indexPath.row]))
+        cell.tweet = reactor.evaluate(MENTIONS.extendKeyPath([indexPath.row]))
         return cell
     }
     
@@ -72,13 +60,5 @@ class StreamViewController : UITableViewController {
     
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 180
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        reactor.dispatch("setDetail", payload: [
-            "index": indexPath.row,
-            "source": "home"
-        ])
-        self.performSegueWithIdentifier("TweetDetail", sender: self)
     }
 }

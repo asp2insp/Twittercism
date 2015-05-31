@@ -116,6 +116,8 @@ class ProfileViewController : UIViewController, UITableViewDataSource, UITableVi
         headerStats.insertSegmentWithTitle("\(followersCount) FOLLOWERS", atIndex: 0, animated: false)
         headerStats.insertSegmentWithTitle("\(followingCount) FOLLOWING", atIndex: 0, animated: false)
         headerStats.insertSegmentWithTitle("\(tweetCount) TWEETS", atIndex: 0, animated: false)
+        
+        self.title = headerDisplayName.text
     }
     
     func fetchTimeline() {

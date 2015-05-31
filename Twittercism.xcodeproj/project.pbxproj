@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5555F9E6E6871EE0D670B9D2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4BC6148E3590B3E02866C4 /* libPods.a */; };
+		FE338E5F1B1BCF25009BBABB /* MentionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE338E5E1B1BCF25009BBABB /* MentionsViewController.swift */; };
+		FE338E621B1BCFB1009BBABB /* MentionsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE338E611B1BCFB1009BBABB /* MentionsStore.swift */; };
 		FE39A2091B1B9F67008C4B28 /* DrawerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39A2081B1B9F67008C4B28 /* DrawerSegue.swift */; };
 		FE39A20B1B1B9FAE008C4B28 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39A20A1B1B9FAE008C4B28 /* DrawerViewController.swift */; };
 		FE7781931B119EE9006EA4D0 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE77818F1B119EE9006EA4D0 /* user@2x.png */; };
@@ -67,6 +69,8 @@
 		1F4BC6148E3590B3E02866C4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E321D1E770453E919162E9F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D83AEA2F4B44C15ACDD6EC2E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FE338E5E1B1BCF25009BBABB /* MentionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsViewController.swift; sourceTree = "<group>"; };
+		FE338E611B1BCFB1009BBABB /* MentionsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsStore.swift; sourceTree = "<group>"; };
 		FE39A2081B1B9F67008C4B28 /* DrawerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerSegue.swift; sourceTree = "<group>"; };
 		FE39A20A1B1B9FAE008C4B28 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		FE77818F1B119EE9006EA4D0 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
@@ -160,6 +164,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE338E601B1BCF28009BBABB /* Mentions */ = {
+			isa = PBXGroup;
+			children = (
+				FE338E5E1B1BCF25009BBABB /* MentionsViewController.swift */,
+				FE338E611B1BCFB1009BBABB /* MentionsStore.swift */,
+			);
+			name = Mentions;
+			sourceTree = "<group>";
+		};
 		FE39A2071B1B9F50008C4B28 /* Drawer */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +229,7 @@
 				FEA706C51B0AD1FE00A401D4 /* Supporting Files */,
 				FEA707291B0D6FE900A401D4 /* Utils.swift */,
 				FE7781A91B12A8CA006EA4D0 /* Twittercism-Bridging-Header.h */,
+				FE338E601B1BCF28009BBABB /* Mentions */,
 			);
 			path = Twittercism;
 			sourceTree = "<group>";
@@ -472,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE338E621B1BCFB1009BBABB /* MentionsStore.swift in Sources */,
 				FEA706F91B0AD69F00A401D4 /* ProfileViewController.swift in Sources */,
 				FEA707181B0B9DE400A401D4 /* Evaluator.swift in Sources */,
 				FEA706FB1B0AD6BC00A401D4 /* StreamStore.swift in Sources */,
@@ -480,6 +495,7 @@
 				FE39A20B1B1B9FAE008C4B28 /* DrawerViewController.swift in Sources */,
 				FE77819C1B11A2D7006EA4D0 /* TweetDetailViewController.swift in Sources */,
 				FEA707191B0B9DE400A401D4 /* Getter.swift in Sources */,
+				FE338E5F1B1BCF25009BBABB /* MentionsViewController.swift in Sources */,
 				FEA7070C1B0AD82200A401D4 /* AccountManager.swift in Sources */,
 				FEA707171B0B9DE400A401D4 /* ChangeObserver.swift in Sources */,
 				FEA706CA1B0AD1FE00A401D4 /* StreamViewController.swift in Sources */,

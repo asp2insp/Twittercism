@@ -19,12 +19,14 @@ class TwitterApi {
     let retweetEndpoint = "https://api.twitter.com/1.1/statuses/retweet/"
     let updateEndpoint = "https://api.twitter.com/1.1/statuses/update.json"
     let streamEndpoint = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+    let mentionsEndpoint = "https://api.twitter.com/1.1/statuses/mentions_timeline.json"
 
     
     init() {
         reactor.registerStore("stream", store: StreamStore())
         reactor.registerStore("ui", store: UIStore())
         reactor.registerStore("timeline", store: TimelineStore())
+        reactor.registerStore("mentions", store: MentionsStore())
     }
     
     class func loadTweets() {
@@ -245,4 +247,42 @@ class TwitterApi {
         }
     }
 
+    class func loadMentions() {
+        sharedInstance.loadMentions()
+    }
+    
+    func loadMentions() {
+        if Twitter.sharedInstance().session() == nil {
+            self.reactor.dispatch("setMentions", payload: [])
+            return
+        }
+        
+        let params = ["user_id": Twitter.sharedInstance().session().userID]
+        var clientError : NSError?
+        
+        let request = Twitter.sharedInstance().APIClient.URLRequestWithMethod(
+            "GET", URL: mentionsEndpoint, parameters: params,
+            error: &clientError)
+        
+        if request != nil {
+            Twitter.sharedInstance().APIClient.sendTwitterRequest(request) {
+                (response, data, connectionError) -> Void in
+                if (connectionError == nil) {
+                    var jsonError : NSError?
+                    let json : AnyObject? =
+                    NSJSONSerialization.JSONObjectWithData(data,
+                        options: nil,
+                        error: &jsonError)
+                    self.reactor.dispatch("setMentions", payload: json!)
+                }
+                else {
+                    println("Error: \(connectionError)")
+                    self.reactor.dispatch("setMentions", payload: [])
+                }
+            }
+        }
+        else {
+            self.reactor.dispatch("setMentions", payload: [])
+        }
+    }
 }

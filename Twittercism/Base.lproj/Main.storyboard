@@ -40,7 +40,7 @@
                                     <constraint firstAttribute="height" constant="50" id="jeY-bV-Cwm"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-q0-Mwe" userLabel="tableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-q0-Mwe" userLabel="tableView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="428"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="P79-RW-NUc" userLabel="Header">
@@ -50,6 +50,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4iR-pn-iU2" userLabel="Header Background">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="155"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="155" id="JBG-ES-HMc"/>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="155" id="kI0-uD-GX0">
                                                     <variation key="heightClass=regular-widthClass=compact" constant="150"/>
                                                 </constraint>
@@ -318,13 +319,25 @@
                                             <action selector="didSelectNavigationItem:" destination="enj-EJ-8uk" eventType="touchUpInside" id="3ER-Qf-vDZ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGl-4N-dst">
+                                        <rect key="frame" x="8" y="84" width="64" height="30"/>
+                                        <state key="normal" title="Mentions">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didSelectNavigationItem:" destination="enj-EJ-8uk" eventType="touchUpInside" id="trV-dB-FAp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="KGl-4N-dst" firstAttribute="leading" secondItem="DFI-iS-dVQ" secondAttribute="leading" constant="8" id="JSx-T7-6rs"/>
                                     <constraint firstItem="ib7-8W-q9N" firstAttribute="leading" secondItem="DFI-iS-dVQ" secondAttribute="leading" constant="8" id="U0R-KU-3lN"/>
                                     <constraint firstAttribute="width" constant="100" id="UZZ-se-UEs"/>
                                     <constraint firstItem="82Q-Wa-9On" firstAttribute="leading" secondItem="DFI-iS-dVQ" secondAttribute="leading" constant="8" id="ZhQ-3Z-NKk"/>
                                     <constraint firstItem="ib7-8W-q9N" firstAttribute="top" secondItem="DFI-iS-dVQ" secondAttribute="top" constant="8" id="jl9-zm-7BO"/>
+                                    <constraint firstItem="KGl-4N-dst" firstAttribute="top" secondItem="82Q-Wa-9On" secondAttribute="bottom" constant="8" id="t5Z-MX-X38"/>
                                     <constraint firstItem="82Q-Wa-9On" firstAttribute="top" secondItem="ib7-8W-q9N" secondAttribute="bottom" constant="8" id="xXp-fa-YUD"/>
                                 </constraints>
                             </view>
@@ -361,9 +374,9 @@
                         <outlet property="containerView" destination="Km7-kn-ExF" id="0uY-Rj-sxr"/>
                         <outlet property="leftSideConstraint" destination="MzP-Gr-bxY" id="AG5-ye-h9s"/>
                         <outlet property="profileButton" destination="82Q-Wa-9On" id="iKE-Z9-mkD"/>
-                        <outlet property="timelineButton" destination="ib7-8W-q9N" id="IYO-hS-ASS"/>
                         <segue destination="0ZC-Nu-P4T" kind="custom" identifier="drawer_Timeline" customClass="DrawerSegue" customModule="Twittercism" id="qv3-kO-Wmk"/>
                         <segue destination="eAd-uM-x4b" kind="custom" identifier="drawer_Profile" customClass="DrawerSegue" customModule="Twittercism" id="SqB-Ra-kGH"/>
+                        <segue destination="d65-RI-BTI" kind="custom" identifier="drawer_Mentions" customClass="DrawerSegue" customModule="Twittercism" customModuleProvider="target" id="MpQ-Ar-f7T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtw-ih-AtT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -373,7 +386,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="771" y="373"/>
+            <point key="canvasLocation" x="803" y="-81"/>
         </scene>
         <!--Stream View Controller-->
         <scene sceneID="9JF-TZ-fOJ">
@@ -470,6 +483,33 @@
             </objects>
             <point key="canvasLocation" x="2197" y="1584"/>
         </scene>
+        <!--Mentions View Controller-->
+        <scene sceneID="Wni-J5-TGI">
+            <objects>
+                <tableViewController id="usV-iZ-ocz" customClass="MentionsViewController" customModule="Twittercism" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6Pe-l4-USu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cKo-pP-x5w">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cKo-pP-x5w" id="VYN-Ko-to9">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="usV-iZ-ocz" id="yfW-Fd-RhF"/>
+                            <outlet property="delegate" destination="usV-iZ-ocz" id="aWz-oR-fe7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="9Eo-ZJ-0u4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NaR-Kw-4Ru" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2588" y="-809"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="hny-p6-EZN">
             <objects>
@@ -505,6 +545,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlv-hp-XJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1767" y="833"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3F6-Nv-k12">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d65-RI-BTI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5ab-ff-FEx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="usV-iZ-ocz" kind="relationship" relationship="rootViewController" id="9Jq-lH-lgm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ELe-oX-j99" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1776" y="-809"/>
         </scene>
     </scenes>
     <resources>

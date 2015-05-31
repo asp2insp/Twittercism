@@ -13,7 +13,6 @@ class DrawerViewController : UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var leftSideConstraint: NSLayoutConstraint!
 
-    @IBOutlet weak var timelineButton: UIButton!
     @IBOutlet weak var profileButton: UIButton!
     
     var viewControllers : [String: UIViewController] = [:]
@@ -56,6 +55,7 @@ class DrawerViewController : UIViewController {
         super.awakeFromNib()
         populateViewController("Timeline")
         populateViewController("Profile")
+        populateViewController("Mentions")
     }
     
     func openDrawer() {
