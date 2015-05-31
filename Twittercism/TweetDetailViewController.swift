@@ -13,7 +13,8 @@ class TweetDetailViewController : UIViewController, UITableViewDataSource {
     var reactor : Reactor!
     var keys : [UInt] = []
     @IBOutlet var tableView: UITableView!
-    let DETAIL = Getter(keyPath: ["ui", "detailIndex"])
+    let DETAIL_SOURCE = Getter(keyPath: ["ui", "detail", "source"])
+    let DETAIL_INDEX = Getter(keyPath: ["ui", "detail", "index"])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +46,9 @@ class TweetDetailViewController : UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tweet", forIndexPath: indexPath) as! TweetView
-        let index = reactor.evaluateToSwift(DETAIL) as! Int
-        cell.tweet = reactor.evaluate(Getter(keyPath: ["stream", index]))
+        let baseGetter = reactor.evaluateToSwift(DETAIL_SOURCE) as! String == "timeline" ? TIMELINE : TWEETS
+        let index = reactor.evaluateToSwift(DETAIL_INDEX) as! Int
+        cell.tweet = reactor.evaluate(baseGetter.extendKeyPath([index]))
         return cell
     }
 }

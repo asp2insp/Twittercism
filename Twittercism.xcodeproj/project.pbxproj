@@ -23,6 +23,7 @@
 		FE7781AF1B12D2BA006EA4D0 /* retweet_green.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7781AE1B12D2BA006EA4D0 /* retweet_green.png */; };
 		FE7781B41B142715006EA4D0 /* TimelineStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7781B31B142715006EA4D0 /* TimelineStore.swift */; };
 		FE7782691B1B6BB6006EA4D0 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE7782681B1B6BB6006EA4D0 /* background.jpg */; };
+		FE77826B1B1B7973006EA4D0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77826A1B1B7973006EA4D0 /* HeaderView.swift */; };
 		FEA706C81B0AD1FE00A401D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA706C71B0AD1FE00A401D4 /* AppDelegate.swift */; };
 		FEA706CA1B0AD1FE00A401D4 /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA706C91B0AD1FE00A401D4 /* StreamViewController.swift */; };
 		FEA706CD1B0AD1FE00A401D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA706CB1B0AD1FE00A401D4 /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		FE7781AE1B12D2BA006EA4D0 /* retweet_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retweet_green.png; sourceTree = "<group>"; };
 		FE7781B31B142715006EA4D0 /* TimelineStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineStore.swift; sourceTree = "<group>"; };
 		FE7782681B1B6BB6006EA4D0 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		FE77826A1B1B7973006EA4D0 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		FEA706C21B0AD1FE00A401D4 /* Twittercism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twittercism.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA706C61B0AD1FE00A401D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEA706C71B0AD1FE00A401D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				FEA706F81B0AD69F00A401D4 /* ProfileViewController.swift */,
+				FE77826A1B1B7973006EA4D0 /* HeaderView.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				FEA706FF1B0AD6CE00A401D4 /* TweetView.swift in Sources */,
 				FEA7071D1B0B9DE400A401D4 /* Tag.swift in Sources */,
 				FEA7071A1B0B9DE400A401D4 /* Immutable.swift in Sources */,
+				FE77826B1B1B7973006EA4D0 /* HeaderView.swift in Sources */,
 				FEA707071B0AD78D00A401D4 /* WriteTweetViewController.swift in Sources */,
 				FEA7072A1B0D6FE900A401D4 /* Utils.swift in Sources */,
 				FEA7071B1B0B9DE400A401D4 /* Reactor.swift in Sources */,

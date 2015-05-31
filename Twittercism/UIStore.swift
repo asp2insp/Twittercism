@@ -13,8 +13,8 @@ class UIStore : Store {
         self.on("setReply", handler: {(state, replyId, action) -> Immutable.State in
             return state.setIn(["replyId"], withValue: Immutable.toState(replyId as! String))
         })
-        self.on("setDetail", handler: {(state, index, action) -> Immutable.State in
-            return state.setIn(["detailIndex"], withValue: Immutable.toState(index as! Int))
+        self.on("setDetail", handler: {(state, detail, action) -> Immutable.State in
+            return state.setIn(["detail"], withValue: Immutable.toState(detail as! AnyObject))
         })
         
     }

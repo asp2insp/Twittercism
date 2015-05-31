@@ -55,7 +55,7 @@ class StreamViewController : UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tweet", forIndexPath: indexPath) as! TweetView
-        cell.tweet = reactor.evaluate(Getter(keyPath: ["stream", indexPath.row]))
+        cell.tweet = reactor.evaluate(TWEETS.extendKeyPath([indexPath.row]))
         return cell
     }
     
@@ -64,11 +64,14 @@ class StreamViewController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 160
+        return 180
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        reactor.dispatch("setDetail", payload: indexPath.row)
+        reactor.dispatch("setDetail", payload: [
+            "index": indexPath.row,
+            "source": "home"
+        ])
         self.performSegueWithIdentifier("TweetDetail", sender: self)
     }
 }

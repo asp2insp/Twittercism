@@ -10,6 +10,9 @@ import Foundation
 
 class TimelineStore : Store {
     override func initialize() {
+        self.on("setTimelineUser", handler: { (state, screenName, action) -> Immutable.State in
+            return state.setIn(["target_screen_name"], withValue: Immutable.toState(screenName as! String))
+        })
         self.on("setUserProfile", handler: { (state, profile, action) -> Immutable.State in
             return state.setIn(["user"], withValue: Immutable.toState(profile as! AnyObject))
         })

@@ -54,6 +54,12 @@ public class Getter : Hashable, Equatable {
     public var recursives : [Getter] {
         return Evaluator.recursiveParts(self)
     }
+    
+    public func extendKeyPath(keyPath: [AnyObject]) -> Getter {
+        var totalKeyPath = self.keyPath
+        totalKeyPath.extend(keyPath)
+        return Getter(keyPath: totalKeyPath, withFunc: self.compute)
+    }
 }
 
 public func ==(a: Getter, b: Getter) -> Bool {
