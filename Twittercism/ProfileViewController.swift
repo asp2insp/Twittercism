@@ -11,6 +11,8 @@ import UIKit
 import TwitterKit
 
 let TIMELINE = Getter(keyPath: ["timeline", "tweets"])
+let TARGET_TIMELINE = Getter(keyPath: ["timeline", "target_screen_name"])
+
 
 class ProfileViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     @IBOutlet weak var loginButtonPlaceholder: UIView!
@@ -31,7 +33,6 @@ class ProfileViewController : UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     
-    let TARGET_TIMELINE = Getter(keyPath: ["timeline", "target_screen_name"])
     let PROFILE = Getter(keyPath: ["timeline", "user"])
     
     var reactor : Reactor!
@@ -67,7 +68,6 @@ class ProfileViewController : UIViewController, UITableViewDataSource, UITableVi
 
         if Twitter.sharedInstance().session() != nil {
             placeLogoutButton()
-            NSLog("Found account for \(Twitter.sharedInstance().session().userName)")
         } else {
             placeLoginButton()
         }
@@ -101,7 +101,8 @@ class ProfileViewController : UIViewController, UITableViewDataSource, UITableVi
         
         headerDisplayName.text = profile.getIn(["name"]).toSwift() as? String ?? "Unknown"
         if let profileUrl = profile.getIn(["profile_image_url_https"]).toSwift() as? String {
-            headerProfile.setImageWithURL(NSURL(string: profileUrl))
+            let largerUrl = profileUrl.stringByReplacingOccurrencesOfString("normal", withString: "bigger")
+            headerProfile.setImageWithURL(NSURL(string: largerUrl))
         }
         if let backgroundUrl = profile.getIn(["profile_background_image_url_https"]).toSwift() as? String {
             headerBackground.setImageWithURL(NSURL(string: backgroundUrl))

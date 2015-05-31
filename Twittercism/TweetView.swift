@@ -15,7 +15,7 @@ class TweetView : UITableViewCell {
     @IBOutlet weak var sourceText: UILabel!
     @IBOutlet weak var localizedName: UILabel!
     @IBOutlet weak var handleLabel: UILabel!
-    @IBOutlet weak var profilePic: UIImageView!
+    @IBOutlet weak var profilePic: UIButton!
     @IBOutlet weak var tweetContent: UILabel!
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var retweetButton: UIButton!
@@ -68,8 +68,9 @@ class TweetView : UITableViewCell {
             localizedName.text = authorName
             
             if let profileUrl = contentTweet.getIn(["user", "profile_image_url"]).toSwift() as? String {
-                profilePic.setImageWithURL(NSURL(string: profileUrl))
-                profilePic.layer.cornerRadius = 10; // this value vary as per your desire
+                let largerUrl = profileUrl.stringByReplacingOccurrencesOfString("normal", withString: "bigger")
+                profilePic.setBackgroundImageForState(UIControlState.Normal, withURL: NSURL(string: largerUrl))
+                profilePic.layer.cornerRadius = 10;
                 profilePic.clipsToBounds = true;
             }
             
@@ -113,6 +114,8 @@ class TweetView : UITableViewCell {
             reactor.dispatch("retweet", payload: tweetIdString)
         case replyButton:
             reactor.dispatch("setReply", payload: replyName)
+        case profilePic:
+            reactor.dispatch("setTimelineUser", payload: replyName)
         default:
             NSLog("Unknown Sender")
         }

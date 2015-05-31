@@ -22,10 +22,10 @@ class StreamViewController : UITableViewController {
         refreshControl?.addTarget(self, action: "fetchTimeline", forControlEvents: UIControlEvents.ValueChanged)
         
         reactor = TwitterApi.sharedInstance.reactor
+        TwitterApi.loadTweets()
     }
     
     override func viewDidAppear(animated: Bool) {
-        TwitterApi.loadTweets()
         super.viewDidAppear(animated)
         keys.append(reactor.observe(TWEETS, handler: { (newState) -> () in
             self.refreshControl?.endRefreshing()
@@ -33,6 +33,12 @@ class StreamViewController : UITableViewController {
         }))
         keys.append(reactor.observe(WriteTweetViewController.REPLY, handler: { (newState) -> () in
             self.performSegueWithIdentifier("reply", sender: self)
+        }))
+        keys.append(reactor.observe(TARGET_TIMELINE, handler: { (newState) -> () in
+            println(self.reactor.evaluateToSwift(CURRENT_TAB) as? String)
+            if let tab = self.reactor.evaluateToSwift(CURRENT_TAB) as? String where tab == "drawer_Timeline" {
+                self.performSegueWithIdentifier("profile", sender: self)
+            }
         }))
     }
     

@@ -408,6 +408,7 @@
                     <connections>
                         <segue destination="5PP-7S-qDJ" kind="show" identifier="TweetDetail" id="2CT-Io-Bhj"/>
                         <segue destination="lVi-ny-dbQ" kind="presentation" identifier="reply" id="MX7-JY-Vq1"/>
+                        <segue destination="PvJ-W8-uMv" kind="show" identifier="profile" id="CS7-id-0gl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZ0-e4-f25" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -511,6 +512,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sn0-N8-w0I"/>
+        <segue reference="CS7-id-0gl"/>
         <segue reference="8GF-eo-iWP"/>
     </inferredMetricsTieBreakers>
 </document>

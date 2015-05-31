@@ -94,6 +94,7 @@ class DrawerViewController : UIViewController {
     override func viewDidLoad() {
         reactor = TwitterApi.sharedInstance.reactor
         activeViewController = viewControllers["drawer_Timeline"]
+        reactor.dispatch("setTab", payload: "drawer_Timeline")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -110,13 +111,15 @@ class DrawerViewController : UIViewController {
     }
     
     @IBAction func didSelectNavigationItem(sender: UIButton) {
+        let currentTab = "drawer_\(sender.currentTitle!)"
+        reactor.dispatch("setTab", payload: currentTab)
         switch sender {
         case profileButton:
             reactor.dispatch("setTimelineUser", payload: "me")
         default:
             break
         }
-        self.activeViewController = viewControllers["drawer_\(sender.currentTitle!)"]
+        self.activeViewController = viewControllers[currentTab]
         closeDrawer()
     }
 }

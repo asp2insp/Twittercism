@@ -8,6 +8,8 @@
 
 import Foundation
 
+let CURRENT_TAB = Getter(keyPath: ["ui", "currentTab"])
+
 class UIStore : Store {
     override func initialize() {
         self.on("setReply", handler: {(state, replyId, action) -> Immutable.State in
@@ -16,7 +18,9 @@ class UIStore : Store {
         self.on("setDetail", handler: {(state, detail, action) -> Immutable.State in
             return state.setIn(["detail"], withValue: Immutable.toState(detail as! AnyObject))
         })
-        
+        self.on("setTab", handler: {(state, name, action) -> Immutable.State in
+            return state.setIn(["currentTab"], withValue: Immutable.toState(name as! AnyObject))
+        })
     }
     
     override func getInitialState() -> Immutable.State {
